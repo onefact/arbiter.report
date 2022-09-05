@@ -1,0 +1,417 @@
+{
+    "data": [
+        {
+            "like_count": 291,
+            "quote_count": 31,
+            "reply_count": 104,
+            "retweet_count": 90,
+            "year_week": "2021_26"
+        },
+        {
+            "like_count": 713,
+            "quote_count": 46,
+            "reply_count": 155,
+            "retweet_count": 195,
+            "year_week": "2021_27"
+        },
+        {
+            "like_count": 879,
+            "quote_count": 56,
+            "reply_count": 163,
+            "retweet_count": 217,
+            "year_week": "2021_28"
+        },
+        {
+            "like_count": 1000,
+            "quote_count": 56,
+            "reply_count": 158,
+            "retweet_count": 287,
+            "year_week": "2021_29"
+        },
+        {
+            "like_count": 1678,
+            "quote_count": 113,
+            "reply_count": 398,
+            "retweet_count": 421,
+            "year_week": "2021_30"
+        },
+        {
+            "like_count": 1528,
+            "quote_count": 100,
+            "reply_count": 289,
+            "retweet_count": 437,
+            "year_week": "2021_31"
+        },
+        {
+            "like_count": 944,
+            "quote_count": 93,
+            "reply_count": 222,
+            "retweet_count": 321,
+            "year_week": "2021_32"
+        },
+        {
+            "like_count": 3571,
+            "quote_count": 181,
+            "reply_count": 397,
+            "retweet_count": 656,
+            "year_week": "2021_33"
+        },
+        {
+            "like_count": 2020,
+            "quote_count": 159,
+            "reply_count": 365,
+            "retweet_count": 570,
+            "year_week": "2021_34"
+        },
+        {
+            "like_count": 101840,
+            "quote_count": 1174,
+            "reply_count": 931,
+            "retweet_count": 14447,
+            "year_week": "2021_35"
+        },
+        {
+            "like_count": 2397,
+            "quote_count": 177,
+            "reply_count": 318,
+            "retweet_count": 639,
+            "year_week": "2021_36"
+        },
+        {
+            "like_count": 2485,
+            "quote_count": 171,
+            "reply_count": 378,
+            "retweet_count": 652,
+            "year_week": "2021_37"
+        },
+        {
+            "like_count": 2182,
+            "quote_count": 186,
+            "reply_count": 343,
+            "retweet_count": 538,
+            "year_week": "2021_38"
+        },
+        {
+            "like_count": 1365,
+            "quote_count": 103,
+            "reply_count": 236,
+            "retweet_count": 415,
+            "year_week": "2021_39"
+        },
+        {
+            "like_count": 2397,
+            "quote_count": 116,
+            "reply_count": 295,
+            "retweet_count": 966,
+            "year_week": "2021_40"
+        },
+        {
+            "like_count": 1086,
+            "quote_count": 92,
+            "reply_count": 189,
+            "retweet_count": 341,
+            "year_week": "2021_41"
+        },
+        {
+            "like_count": 1580,
+            "quote_count": 127,
+            "reply_count": 276,
+            "retweet_count": 477,
+            "year_week": "2021_42"
+        },
+        {
+            "like_count": 906,
+            "quote_count": 66,
+            "reply_count": 209,
+            "retweet_count": 291,
+            "year_week": "2021_43"
+        },
+        {
+            "like_count": 933,
+            "quote_count": 99,
+            "reply_count": 219,
+            "retweet_count": 323,
+            "year_week": "2021_44"
+        },
+        {
+            "like_count": 1916,
+            "quote_count": 105,
+            "reply_count": 411,
+            "retweet_count": 519,
+            "year_week": "2021_45"
+        },
+        {
+            "like_count": 1508,
+            "quote_count": 121,
+            "reply_count": 330,
+            "retweet_count": 457,
+            "year_week": "2021_46"
+        },
+        {
+            "like_count": 1258,
+            "quote_count": 76,
+            "reply_count": 271,
+            "retweet_count": 365,
+            "year_week": "2021_47"
+        },
+        {
+            "like_count": 1472,
+            "quote_count": 137,
+            "reply_count": 327,
+            "retweet_count": 466,
+            "year_week": "2021_48"
+        },
+        {
+            "like_count": 1352,
+            "quote_count": 117,
+            "reply_count": 252,
+            "retweet_count": 392,
+            "year_week": "2021_49"
+        },
+        {
+            "like_count": 1813,
+            "quote_count": 81,
+            "reply_count": 260,
+            "retweet_count": 422,
+            "year_week": "2021_50"
+        },
+        {
+            "like_count": 723,
+            "quote_count": 57,
+            "reply_count": 206,
+            "retweet_count": 233,
+            "year_week": "2021_51"
+        },
+        {
+            "like_count": 848,
+            "quote_count": 112,
+            "reply_count": 251,
+            "retweet_count": 318,
+            "year_week": "2021_52"
+        },
+        {
+            "like_count": 1417,
+            "quote_count": 111,
+            "reply_count": 367,
+            "retweet_count": 367,
+            "year_week": "2022_1"
+        },
+        {
+            "like_count": 1216,
+            "quote_count": 61,
+            "reply_count": 194,
+            "retweet_count": 352,
+            "year_week": "2022_10"
+        },
+        {
+            "like_count": 1132,
+            "quote_count": 78,
+            "reply_count": 216,
+            "retweet_count": 256,
+            "year_week": "2022_11"
+        },
+        {
+            "like_count": 1057,
+            "quote_count": 73,
+            "reply_count": 169,
+            "retweet_count": 276,
+            "year_week": "2022_12"
+        },
+        {
+            "like_count": 1177,
+            "quote_count": 103,
+            "reply_count": 215,
+            "retweet_count": 325,
+            "year_week": "2022_13"
+        },
+        {
+            "like_count": 1667,
+            "quote_count": 149,
+            "reply_count": 277,
+            "retweet_count": 488,
+            "year_week": "2022_14"
+        },
+        {
+            "like_count": 1560,
+            "quote_count": 206,
+            "reply_count": 845,
+            "retweet_count": 447,
+            "year_week": "2022_15"
+        },
+        {
+            "like_count": 1536,
+            "quote_count": 111,
+            "reply_count": 212,
+            "retweet_count": 464,
+            "year_week": "2022_16"
+        },
+        {
+            "like_count": 719,
+            "quote_count": 68,
+            "reply_count": 144,
+            "retweet_count": 253,
+            "year_week": "2022_17"
+        },
+        {
+            "like_count": 1541,
+            "quote_count": 119,
+            "reply_count": 244,
+            "retweet_count": 474,
+            "year_week": "2022_18"
+        },
+        {
+            "like_count": 965,
+            "quote_count": 117,
+            "reply_count": 211,
+            "retweet_count": 331,
+            "year_week": "2022_19"
+        },
+        {
+            "like_count": 1611,
+            "quote_count": 151,
+            "reply_count": 384,
+            "retweet_count": 471,
+            "year_week": "2022_2"
+        },
+        {
+            "like_count": 4167,
+            "quote_count": 209,
+            "reply_count": 312,
+            "retweet_count": 991,
+            "year_week": "2022_20"
+        },
+        {
+            "like_count": 1763,
+            "quote_count": 107,
+            "reply_count": 209,
+            "retweet_count": 404,
+            "year_week": "2022_21"
+        },
+        {
+            "like_count": 1282,
+            "quote_count": 98,
+            "reply_count": 176,
+            "retweet_count": 306,
+            "year_week": "2022_22"
+        },
+        {
+            "like_count": 1279,
+            "quote_count": 133,
+            "reply_count": 243,
+            "retweet_count": 373,
+            "year_week": "2022_23"
+        },
+        {
+            "like_count": 3670,
+            "quote_count": 326,
+            "reply_count": 319,
+            "retweet_count": 1196,
+            "year_week": "2022_24"
+        },
+        {
+            "like_count": 968,
+            "quote_count": 84,
+            "reply_count": 222,
+            "retweet_count": 330,
+            "year_week": "2022_25"
+        },
+        {
+            "like_count": 1242,
+            "quote_count": 113,
+            "reply_count": 245,
+            "retweet_count": 414,
+            "year_week": "2022_26"
+        },
+        {
+            "like_count": 1154,
+            "quote_count": 61,
+            "reply_count": 169,
+            "retweet_count": 368,
+            "year_week": "2022_27"
+        },
+        {
+            "like_count": 1153,
+            "quote_count": 95,
+            "reply_count": 207,
+            "retweet_count": 298,
+            "year_week": "2022_28"
+        },
+        {
+            "like_count": 972,
+            "quote_count": 80,
+            "reply_count": 208,
+            "retweet_count": 207,
+            "year_week": "2022_29"
+        },
+        {
+            "like_count": 1737,
+            "quote_count": 130,
+            "reply_count": 341,
+            "retweet_count": 456,
+            "year_week": "2022_3"
+        },
+        {
+            "like_count": 2302,
+            "quote_count": 155,
+            "reply_count": 298,
+            "retweet_count": 787,
+            "year_week": "2022_30"
+        },
+        {
+            "like_count": 167,
+            "quote_count": 7,
+            "reply_count": 9,
+            "retweet_count": 38,
+            "year_week": "2022_31"
+        },
+        {
+            "like_count": 984,
+            "quote_count": 74,
+            "reply_count": 280,
+            "retweet_count": 271,
+            "year_week": "2022_4"
+        },
+        {
+            "like_count": 1302,
+            "quote_count": 98,
+            "reply_count": 243,
+            "retweet_count": 431,
+            "year_week": "2022_5"
+        },
+        {
+            "like_count": 317,
+            "quote_count": 8,
+            "reply_count": 64,
+            "retweet_count": 48,
+            "year_week": "2022_32"
+        },
+        {
+            "like_count": 1232,
+            "quote_count": 121,
+            "reply_count": 286,
+            "retweet_count": 347,
+            "year_week": "2022_6"
+        },
+        {
+            "like_count": 1318,
+            "quote_count": 97,
+            "reply_count": 217,
+            "retweet_count": 398,
+            "year_week": "2022_7"
+        },
+        {
+            "like_count": 995,
+            "quote_count": 78,
+            "reply_count": 246,
+            "retweet_count": 273,
+            "year_week": "2022_8"
+        },
+        {
+            "like_count": 859,
+            "quote_count": 81,
+            "reply_count": 256,
+            "retweet_count": 204,
+            "year_week": "2022_9"
+        }
+    ]
+}
