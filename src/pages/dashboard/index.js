@@ -200,7 +200,7 @@ const Overview = () => {
               xs={12}
             >
               <div id="choropleth">
-                <div class="tooltip"></div>
+                <div className="tooltip"></div>
               <EarthWrapper/>
               </div>
             </Grid> 
