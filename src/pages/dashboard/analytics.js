@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import Head from 'next/head';
 import { Box, Button, Container, Grid, MenuItem, TextField, Typography } from '@mui/material';
 import { AuthGuard } from '../../components/authentication/auth-guard';
@@ -6,14 +6,45 @@ import { DashboardLayout } from '../../components/dashboard/dashboard-layout';
 import { AnalyticsGeneralOverview } from '../../components/dashboard/analytics/analytics-general-overview';
 import { AnalyticsMostVisited } from '../../components/dashboard/analytics/analytics-most-visited';
 import { AnalyticsSocialSources } from '../../components/dashboard/analytics/analytics-social-sources';
-import { AnalyticsVisitsByCountry } from '../../components/dashboard/analytics/analytics-visits-by-country';
+import { AnalyticsTopicsByPopularity } from '../../components/dashboard/analytics/analytics-visits-by-country';
 import { AnalyticsTrafficSources } from '../../components/dashboard/analytics/analytics-traffic-sources';
+import Sankey  from '../../components/dashboard/overview/sankey.js';
+import {PageViews} from "../../components/dashboard/overview/pageviews"
+import { readJSONData } from '../../utils/readData';
 import { Reports as ReportsIcon } from '../../icons/reports';
 import { gtm } from '../../lib/gtm';
 
+const preProcess = (jsonData) => {
+  jsonData = jsonData["data"][0];
+  let name = jsonData["page"];
+  let dataPoints =  jsonData["page_views"].map(obj=>{
+    return Object.keys(obj)[0]
+  })
+  let data = jsonData["page_views"].map(obj=>{
+    return Object.values(obj)[0]
+  })
+  let processedData = {
+    series: [
+      {
+        data: data,
+        name: name
+      }
+  ],
+    xaxis: {
+      dataPoints: dataPoints
+    }
+  };
+  return processedData
+}
+
 const Analytics = () => {
-  useEffect(() => {
-    gtm.push({ event: 'page_view' });
+  const [sankeyData, setSankeyData] = useState(null);
+  const [viewData, setViewData] = useState(undefined);
+
+  useEffect(async () => {
+    setSankeyData(await readJSONData("/data/sankey_data.json"))
+    let data = await readJSONData("/data/pageviews.json")
+    setViewData(preProcess(data));
   }, []);
 
   return (
@@ -77,18 +108,39 @@ const Analytics = () => {
               spacing={4}
             >
               <Grid
+              item
+              md={12}
+              xs={12}
+            >
+              {viewData && <PageViews data={viewData}/>}
+            </Grid> 
+              <Grid
+                item
+                md={12}
+                xs={12}
+              >
+                {sankeyData && <Sankey data={sankeyData} />}
+              </Grid>
+              {/* <Grid
                 item
                 md={8}
                 xs={12}
               >
                 <AnalyticsTrafficSources sx={{ height: '100%' }} />
+              </Grid> */}
+              <Grid
+                item
+                md={6}
+                xs={12}
+              >
+                <AnalyticsTopicsByPopularity title={"Influential"}/>
               </Grid>
               <Grid
                 item
-                md={4}
+                md={6}
                 xs={12}
               >
-                <AnalyticsVisitsByCountry />
+                <AnalyticsTopicsByPopularity title={"Popular"}/>
               </Grid>
               <Grid
                 item

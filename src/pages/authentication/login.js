@@ -9,7 +9,7 @@ import { AmplifyLogin } from '../../components/authentication/amplify-login';
 import { Auth0Login } from '../../components/authentication/auth0-login';
 import { FirebaseLogin } from '../../components/authentication/firebase-login';
 import { JWTLogin } from '../../components/authentication/jwt-login';
-import { Logo } from '../../components/logo';
+import Logo from '../../components/simppl_logo.jpg';
 import { useAuth } from '../../hooks/use-auth';
 import { gtm } from '../../lib/gtm';
 
@@ -33,7 +33,7 @@ const Login = () => {
     <>
       <Head>
         <title>
-          Login | Material Kit Pro
+          Login | SimPPL
         </title>
       </Head>
       <Box
@@ -45,7 +45,7 @@ const Login = () => {
           minHeight: '100vh'
         }}
       >
-        <AuthBanner />
+        {/* <AuthBanner /> */}
         <Container
           maxWidth="sm"
           sx={{
@@ -55,7 +55,7 @@ const Login = () => {
             }
           }}
         >
-          <Box
+          {/* <Box
             sx={{
               alignItems: 'center',
               backgroundColor: (theme) => theme.palette.mode === 'dark'
@@ -88,7 +88,7 @@ const Login = () => {
               alt="Auth platform"
               src={platformIcons[platform]}
             />
-          </Box>
+          </Box> */}
           <Card
             elevation={16}
             sx={{ p: 4 }}
@@ -101,19 +101,19 @@ const Login = () => {
                 justifyContent: 'center'
               }}
             >
-              <NextLink
+              {/* <NextLink
                 href="/"
                 passHref
               >
                 <a>
-                  <Logo
+                  <img src={Logo} alt=""
                     sx={{
                       height: 40,
-                      width: 40
+                      width: 80
                     }}
                   />
                 </a>
-              </NextLink>
+              </NextLink> */}
               <Typography variant="h4">
                 Log in
               </Typography>
@@ -122,7 +122,7 @@ const Login = () => {
                 sx={{ mt: 2 }}
                 variant="body2"
               >
-                Sign in on the internal platform
+                Sign in on the SimPPL Dashboard
               </Typography>
             </Box>
             <Box
@@ -148,7 +148,7 @@ const Login = () => {
                   color="textSecondary"
                   variant="body2"
                 >
-                  Create new account
+                  Don't have an account? Register now!
                 </Link>
               </NextLink>
             </div>

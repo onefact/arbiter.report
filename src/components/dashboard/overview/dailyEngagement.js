@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Bar } from 'react-chartjs-2';
+import {Chart} from "../../chart";
 import {
     Card,
     CardActions,
@@ -9,46 +9,101 @@ import {
 
 function DailyEngagement(props)
 {
-    const [commentData, setCommentData] = useState([]);
+    const [engagementData, setEngagementData] = useState([]);
 
     useEffect(() => {
-        setCommentData(getCommentData(props.data));
+        setEngagementData(getEngagementData(props.data));
     }, []);
 
+    let datasets;
+    let chartOptions;
+    if(engagementData.length !== 0) 
+    {
+        const datasetColours = ["orange", "red", "blue", "green", "violet"];
+        
+        const weeks = Object.keys(engagementData);
+        const engagementTypes = Object.keys(engagementData[weeks[0]]);
+        datasets = engagementTypes.map((engType, id) => {
+            return {
+                name: engType, 
+                data: Object.values(engagementData).map((eng) => eng[engType]), 
+                backgroundColor: datasetColours[id]
+            }
+        });
+    
+        chartOptions = {
+            chart: {
+                id: "basic-bar",
+                foreColor: 'black',
+                zoom: {
+                    type: 'x',
+                    enabled: true,
+                    autoScaleYaxis: true
+                  },
+                toolbar: {
+                    autoSelected: 'zoom',
+                    tools:{
+                        download: false,
+                    }
+                }
+            }, 
+            plotOptions: {
+                bar: {
+                  dataLabels: {
+                    position: "top" // top, center, bottom
+                  }
+                }
+              },
+              dataLabels:{
+                enabled:false
+              },
+              tooltip: {
+                enabled: true,
+                shared: false,
+                intersect: true,
+                followCursor: true,
+                theme: "dark",
+                onDatasetHover: {
+                  highlightDataSeries: false
+                },
+              },
+            xaxis: {
+                categories: weeks,
+                tickPlacement: 'on'
+            },
+            legend: {
+                horizontalAlign: "left", 
+                position: "top",
+            }
+        };
+    }
+
     return (<Card>
-            <CardContent>
-                <Typography variant='h5' style={{marginBottom: "10px"}}>Total Engagement Over Weeks</Typography>
-                {commentData.length !== 0 && <Bar
-                    options={{
-                        scales: {
-                            xAxes: [{
-                                barPercentage: 0.4
-                            }]
-                        }
-                    }}
-                    data={{
-                        labels: Object.keys(commentData),
-                        datasets: [{
-                            label: "Engagement",
-                            data: Object.values(commentData),
-                            backgroundColor: "orange",
-                        }]
-                    }}
+            <CardContent style={{overflow: "auto"}}>
+                <Typography variant='h5' style={{marginBottom: "20px"}}>Total Engagement Over Weeks</Typography>
+                {engagementData.length !== 0 && <Chart
+                    options={chartOptions}
+                    series={datasets}
+                    type="bar"
+                    width={"100%"}//{`${datasets[0].data.length*5*50}px`}
+                    height={500}
                 />}
             </CardContent>
         </Card>);
 }
 
-function getCommentData(data)
+function getEngagementData(data)
 {
     const currYear = (new Date()).getFullYear().toString();
     const engagement = {};
 
+    let key;
     data.reddit.forEach((rd) => {
         const splt = rd["created_YY_week"].split("_");
         if(splt[0] === currYear)
         {
-            engagement[`Week ${parseInt(splt[1])}`] = parseInt(rd["no_posts"]);
+            key = `Week ${parseInt(splt[1])}`;
+            engagement[key] = {Posts: parseInt(rd["no_posts"])};
         }
     });
     
@@ -56,10 +111,19 @@ function getCommentData(data)
         const splt = tw["year_week"].split('_');
         if(splt[0] === currYear)
         {
-            if(!engagement[`Week ${splt[1]}`])
-                engagement[`Week ${splt[1]}`] = tw["like_count"] + tw["quote_count"] + tw["reply_count"] + tw["retweet_count"];
+            key = `Week ${parseInt(splt[1])}`;
+            if(!engagement[key])
+            {
+                engagement[key] = {Posts: 0, Likes: tw["like_count"], Quotes: tw["quote_count"], Replies: tw["reply_count"], 
+                Retweets: tw["retweet_count"]};
+            }
             else
-                engagement[`Week ${splt[1]}`] += tw["like_count"] + tw["quote_count"] + tw["reply_count"] + tw["retweet_count"];
+            {
+                engagement[key].Likes = tw["like_count"];
+                engagement[key].Quotes = tw["quote_count"];
+                engagement[key].Replies = tw["reply_count"];
+                engagement[key].Retweets = tw["retweet_count"];
+            }
         }
     });
 
@@ -67,20 +131,3 @@ function getCommentData(data)
 }
 
 export default DailyEngagement;
-
-/*
-const engagement = {};
-    console.log(data)
-    data.reddit.forEach((rd) => {
-        if(!engagement[rd["created_YY_week"]])
-            engagement[rd["created_YY_week"]] = parseInt(rd["no_posts"]);
-        else
-        engagement[rd["created_YY_week"]] += parseInt(rd["no_posts"]);
-    });
-    data.twitter.data.forEach((tw)=> {
-        if(!engagement[tw["year_week"]])
-            engagement[tw["year_week"]] = tw["like_count"] + tw["quote_count"] + tw["reply_count"] + tw["retweet_count"];
-        else
-            engagement[tw["year_week"]] += tw["like_count"] + tw["quote_count"] + tw["reply_count"] + tw["retweet_count"];
-    });
-*/

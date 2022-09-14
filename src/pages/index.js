@@ -17,14 +17,15 @@ const Home = () => {
   
   useEffect(() => {
     //gtm.push({ event: 'page_view' });
-    router.push("/dashboard");
+    //router.push("/dashboard");
+    router.push("/authentication/login");
   }, []);
 
   return (
     <>
       <Head>
         <title>
-          Material Kit Pro
+          SimPPL
         </title>
       </Head>
       <main>

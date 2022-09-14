@@ -33,7 +33,7 @@ const Register = () => {
     <>
       <Head>
         <title>
-          Register | Material Kit Pro
+          Register | SimPPL
         </title>
       </Head>
       <Box
@@ -45,7 +45,7 @@ const Register = () => {
           minHeight: '100vh'
         }}
       >
-        <AuthBanner />
+        {/* <AuthBanner /> */}
         <Container
           maxWidth="sm"
           sx={{
@@ -55,7 +55,7 @@ const Register = () => {
             }
           }}
         >
-          <Box
+          {/* <Box
             sx={{
               alignItems: 'center',
               backgroundColor: (theme) => theme.palette.mode === 'dark'
@@ -88,7 +88,7 @@ const Register = () => {
               alt="Auth platform"
               src={platformIcons[platform]}
             />
-          </Box>
+          </Box> */}
           <Card
             elevation={16}
             sx={{ p: 4 }}
@@ -101,7 +101,7 @@ const Register = () => {
                 justifyContent: 'center'
               }}
             >
-              <NextLink
+              {/* <NextLink
                 href="/"
                 passHref
               >
@@ -113,7 +113,7 @@ const Register = () => {
                     }}
                   />
                 </a>
-              </NextLink>
+              </NextLink> */}
               <Typography variant="h4">
                 Register
               </Typography>
@@ -122,7 +122,7 @@ const Register = () => {
                 sx={{ mt: 2 }}
                 variant="body2"
               >
-                Register on the internal platform
+                Register on the SimPPL Dashboard
               </Typography>
             </Box>
             <Box
@@ -148,7 +148,7 @@ const Register = () => {
                   color="textSecondary"
                   variant="body2"
                 >
-                  Having an account
+                  Already have an account? Login now!
                 </Link>
               </NextLink>
             </div>

@@ -370,24 +370,24 @@ export const DashboardSidebar = (props) => {
                     color="inherit"
                     variant="subtitle1"
                   >
-                    Acme Inc
+                    SimPPL
                   </Typography>
-                  <Typography
+                  {/* <Typography
                     color="neutral.400"
                     variant="body2"
                   >
                     {t('Your tier')}
                     {' '}
                     : Premium
-                  </Typography>
+                  </Typography> */}
                 </div>
-                <SelectorIcon
+                {/* <SelectorIcon
                   sx={{
                     color: 'neutral.500',
                     width: 14,
                     height: 14
                   }}
-                />
+                /> */}
               </Box>
             </Box>
           </div>
@@ -416,7 +416,7 @@ export const DashboardSidebar = (props) => {
               borderColor: '#2D3748'  // dark divider
             }}
           />
-          <Box sx={{ p: 2 }}>
+          {/* <Box sx={{ p: 2 }}>
             <Typography
               color="neutral.100"
               variant="subtitle2"
@@ -443,7 +443,7 @@ export const DashboardSidebar = (props) => {
                 {t('Documentation')}
               </Button>
             </NextLink>
-          </Box>
+          </Box> */}
         </Box>
       </Scrollbar>
       <OrganizationPopover

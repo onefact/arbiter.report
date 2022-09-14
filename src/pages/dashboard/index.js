@@ -32,7 +32,6 @@ import { InformationCircleOutlined as InformationCircleOutlinedIcon } from '../.
 import { Reports as ReportsIcon } from '../../icons/reports';
 import { Users as UsersIcon } from '../../icons/users';
 import { gtm } from '../../lib/gtm';
-import {PageViews} from "../../components/dashboard/overview/pageviews"
 import {RedditEng} from "../../components/dashboard/overview/reddit_engagement"
 import EarthWrapper from "../../components/dashboard/overview/choropleth";
 import DailyEngagement from "../../components/dashboard/overview/dailyEngagement";
@@ -50,28 +49,7 @@ import {
   } from 'chart.js';
 import { Line, Bar} from 'react-chartjs-2';
 
-const preProcess = (jsonData) => {
-  jsonData = jsonData["data"][0];
-  let name = jsonData["page"];
-  let dataPoints =  jsonData["page_views"].map(obj=>{
-    return Object.keys(obj)[0]
-  })
-  let data = jsonData["page_views"].map(obj=>{
-    return Object.values(obj)[0]
-  })
-  let processedData = {
-    series: [
-      {
-        data: data,
-        name: name
-      }
-  ],
-    xaxis: {
-      dataPoints: dataPoints
-    }
-  };
-  return processedData
-}
+
 
 const Overview = () => {
   const [displayBanner, setDisplayBanner] = useState(false);
@@ -79,7 +57,6 @@ const Overview = () => {
   const [weeklyRedditData, setWeeklyRedditData] = useState(undefined);
   const [weeklyTwitterData, setWeeklyTwitterData] = useState(undefined);
   const [commentData, setCommentData] = useState(undefined);
-  const [viewData, setViewData] = useState(undefined);
   const [dailyRedditComments, setDailyRedditComments] = useState(undefined);
 
   ChartJS.register(
@@ -100,8 +77,7 @@ const Overview = () => {
     setCommentData(await readCSVData("/data/comments_per_subreddit_count.csv"));
     setWeeklyRedditData(await readCSVData("/data/reddit_weekly_agg_data.csv"))
     setWeeklyTwitterData(await readJSONData("/data/twitter_engagements_per_week.json"));
-    let data = await readJSONData("/data/pageviews.json")
-    setViewData(preProcess(data));
+
   }, []);
 
   useEffect(() => {
@@ -194,16 +170,9 @@ const Overview = () => {
                 <OverviewBanner onDismiss={handleDismissBanner} />
               </Grid>
             )}
-              <Grid
-              item
-              md={12}
-              xs={12}
-            >
-              <div id="choropleth">
-                <div className="tooltip"></div>
-              <EarthWrapper/>
-              </div>
-            </Grid> 
+            <Grid item md={12} xs={12}>
+              {weeklyRedditData && weeklyTwitterData && <DailyEngagement data={{reddit: weeklyRedditData, twitter: weeklyTwitterData.data}} />}
+            </Grid>
             <Grid
               item
               md={6}
@@ -229,12 +198,12 @@ const Overview = () => {
               md={12}
               xs={12}
             >
-              {viewData && <PageViews data={viewData}/>}
+              <div id="choropleth">
+                <div className="tooltip"></div>
+              <EarthWrapper/>
+              </div>
             </Grid> 
-            <Grid item md={12} xs={12}>
-              {weeklyRedditData && weeklyTwitterData && <DailyEngagement data={{reddit: weeklyRedditData, twitter: weeklyTwitterData.data}} />}
-            </Grid>
-
+            
 
             {/* <Grid
               item
