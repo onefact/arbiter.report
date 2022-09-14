@@ -148,7 +148,7 @@ const Login = () => {
                   color="textSecondary"
                   variant="body2"
                 >
-                  Don't have an account? Register now!
+                  {"Don't have an account? Register now!"}
                 </Link>
               </NextLink>
             </div>
