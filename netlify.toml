@@ -1,2 +1,8 @@
 [build.environment]
   NODE_OPTIONS = "--max_old_space_size=4096"
+
+[[redirects]]
+  from = "/"
+  to = "/authentication/login"
+  status = 301
+  force = false
