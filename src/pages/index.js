@@ -18,7 +18,7 @@ const Home = () => {
   useEffect(() => {
     //gtm.push({ event: 'page_view' });
     //router.push("/dashboard");
-    router.push("/authentication/login");
+    //router.push("/authentication/login");
   }, []);
 
   return (
