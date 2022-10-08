@@ -20,8 +20,8 @@ function PropogandaDetection()
 
     return (<Paper style={{display: "flex", flexDirection: "column", padding: "20px"}}>
             <Typography variant="h4" style={{marginBottom: "20px", marginLeft: "10px"}}>Propoganda Detection</Typography>
-            {articles.map((article) => {
-                return (<Card variant="outlined" style={{marginBottom: "20px", border: "1px solid black"}}>
+            {articles.map((article, id) => {
+                return (<Card key={id} variant="outlined" style={{marginBottom: "20px", border: "1px solid black"}}>
                     <CardContent>
                         <Typography variant="h5" style={{marginBottom: "10px"}}>{article.title}</Typography>
                         <ArticleBody article={article} />
