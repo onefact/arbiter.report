@@ -34,7 +34,6 @@ function DailyEngagement(props)
         chartOptions = {
             chart: {
                 id: "basic-bar",
-                foreColor: 'black',
                 zoom: {
                     type: 'x',
                     enabled: true,

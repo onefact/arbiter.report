@@ -19,7 +19,7 @@ function PropogandaDetection()
     tags: []}]
 
     return (<Paper style={{display: "flex", flexDirection: "column", padding: "20px"}}>
-            <Typography variant="h4" style={{marginBottom: "20px", marginLeft: "10px"}}>Propoganda Detection</Typography>
+            <Typography variant="h4" style={{marginBottom: "20px", marginLeft: "10px"}}>Propaganda Detection</Typography>
             {articles.map((article, id) => {
                 return (<Card key={id} variant="outlined" style={{marginBottom: "20px", border: "1px solid black"}}>
                     <CardContent>
@@ -43,7 +43,7 @@ function ArticleBody({article})
         texts.push(<Typography variant="body1" style={textStyle}>{article.text.substring(0,article.tags[0].range[0])}</Typography>);
         for(let i = 0; i < article.tags.length; ++i)
         {
-            texts.push(<div style={{display: "inline-flex", outline: "solid 1px black", marginRight: "2px"}}>
+            texts.push(<div style={{display: "inline-flex", outline: "solid 1px", marginRight: "2px"}}>
                 <Typography variant="caption" style={{backgroundColor: article.tags[i].color, color: "white", padding: "2px", fontWeight: "bold"}}>{article.tags[i].tag}</Typography>
                 <Typography variant="body1" style={{...textStyle, padding: "2px"}}>{article.text.substring(article.tags[i].range[0], article.tags[i].range[1])}</Typography>
             </div>)
@@ -66,10 +66,10 @@ function ArticleBody({article})
 function TopicsList()
 {
     const topicGroups = [{topics: "embassy, citizens, consular", color: "#F47459", size: 3, pscore: 0.901},
-    {topics: "evacuations, evacuate, evacuating, leave, evacuation", color: "#F4F459", size: 5, pscore: 1.865},
+    {topics: "evacuations, evacuate, evacuating, leave, evacuation", color: "#C3E460", size: 5, pscore: 1.865},
     {topics: "travel, advised", color: "#59D5F4", size: 2, pscore: 0.245}];
 
-    const colStyle = {border: "1px solid black", textAlign: "center", fontWeight: "bold"};
+    const colStyle = {border: "1px solid", textAlign: "center", fontWeight: "bold"};
     const cells = [];
     topicGroups.map((grp) => {
         cells.push(<Typography variant="body1" style={{...colStyle, backgroundColor: grp.color}}>{grp.topics}</Typography>);
