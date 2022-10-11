@@ -54,6 +54,7 @@ const FollowerGroup = (props) => {
                   {id:8, name: "name8", val:1},
                   {id:9, name: "name9", val:4},
                 ], links: [
+                  
                   {source: 1, target: 2},
                   {source: 2, target: 3},
                   {source: 1, target: 3},

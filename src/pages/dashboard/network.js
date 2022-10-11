@@ -22,6 +22,7 @@ import ToxicityTrend from '../../components/dashboard/network/ToxicityTrend';
 import DegreeSpread from '../../components/dashboard/network/DegreeSpread';
 import FollowerGroup from '../../components/dashboard/network/FollowerGroup';
 
+
 const preProcess = (jsonData) => {
   jsonData = jsonData["data"][0];
   let name = jsonData["page"];
@@ -119,7 +120,7 @@ const Analytics = () => {
               spacing={4}
             >
             <Grid item md={12} xs={12}>
-                <FollowerGroup />
+                <FollowerGroup  />
             </Grid>
             <Grid item md={12} xs={12}>
                 <DegreeSpread />
