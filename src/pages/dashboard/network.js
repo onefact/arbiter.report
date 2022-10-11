@@ -21,7 +21,7 @@ import TotalTweetsTrend from '../../components/dashboard/network/TotalTweetsTren
 import ToxicityTrend from '../../components/dashboard/network/ToxicityTrend';
 import DegreeSpread from '../../components/dashboard/network/DegreeSpread';
 import FollowerGroup from '../../components/dashboard/network/FollowerGroup';
-
+import network_data from '../../../public/data/network.json'
 
 const preProcess = (jsonData) => {
   jsonData = jsonData["data"][0];
@@ -120,7 +120,7 @@ const Analytics = () => {
               spacing={4}
             >
             <Grid item md={12} xs={12}>
-                <FollowerGroup  />
+                <FollowerGroup data={network_data} />
             </Grid>
             <Grid item md={12} xs={12}>
                 <DegreeSpread />
