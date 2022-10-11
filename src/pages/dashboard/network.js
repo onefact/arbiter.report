@@ -97,7 +97,7 @@ const Analytics = () => {
                   sx={{ m: 1 }}
                   variant="outlined"
                 >
-                  Upload
+                  Upload File
                 </Button> 
                 
                 {/* <TextField
