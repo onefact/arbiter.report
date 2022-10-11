@@ -19,6 +19,8 @@ import { gtm } from '../../lib/gtm';
 import PropogandaDetection from '../../components/dashboard/network/PropogandaDetection';
 import TotalTweetsTrend from '../../components/dashboard/network/TotalTweetsTrend';
 import ToxicityTrend from '../../components/dashboard/network/ToxicityTrend';
+import DegreeSpread from '../../components/dashboard/network/DegreeSpread';
+import FollowerGroup from '../../components/dashboard/network/FollowerGroup';
 
 const preProcess = (jsonData) => {
   jsonData = jsonData["data"][0];
@@ -116,7 +118,12 @@ const Analytics = () => {
               container
               spacing={4}
             >
-
+            <Grid item md={12} xs={12}>
+                <FollowerGroup />
+            </Grid>
+            <Grid item md={12} xs={12}>
+                <DegreeSpread />
+            </Grid>
             <Grid item md={12} xs={12}>
                 {conversationData && <TotalTweetsTrend data={conversationData} /> }
             </Grid>

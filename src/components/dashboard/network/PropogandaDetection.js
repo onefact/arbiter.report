@@ -73,11 +73,11 @@ function ArticleBody({article})
 
 function TopicsList()
 {
-    const topicGroups = [{topics: "IMF, Monetary, Debt, Bailout, fund, loan, default, tranche, finance", color: "#C3E460", size: 9, pscore: 0.901},
-    {topics: "Mastercard, payment, interbank, swift, bank, transactions, disconnect, finance, gazprombank", color: "#F47459", size: 9, pscore: 1.865},
-    {topics: "content, channels, facebook, google, platforms, apps, meta, roskomnadzor, censorship, youtube", color: "#59D5F4", size: 10, pscore: 0.645},
-    {topics: "malware, hackers, cyber, ransomware,ddos, cyberattack, servers", color: "#0039e6", size: 7, pscore: 1.564},
-    {topics: "wbo, wba, heavyweight, wbc, usyk, boxing, tyson, rematch, joshua, champion", color: "#c44dff", size: 10, pscore: 0.234}];
+    const topicGroups = [{topics: "IMF, Monetary, Debt, Bailout, fund, loan, default, tranche, finance", color: "#DC9696", size: 9, pscore: 0.901},
+    {topics: "Mastercard, payment, interbank, swift, bank, transactions, disconnect, finance, gazprombank", color: "#EFB5B5", size: 9, pscore: 1.865},
+    {topics: "content, channels, facebook, google, platforms, apps, meta, roskomnadzor, censorship, youtube", color: "#99EB97", size: 10, pscore: 0.645},
+    {topics: "malware, hackers, cyber, ransomware,ddos, cyberattack, servers", color: "#ffcc00", size: 7, pscore: 1.564},
+    {topics: "wbo, wba, heavyweight, wbc, usyk, boxing, tyson, rematch, joshua, champion", color: "#1243E6", size: 10, pscore: 0.234}];
 
     const colStyle = {border: "1px solid", textAlign: "center", fontWeight: "bold"};
     const cells = [];

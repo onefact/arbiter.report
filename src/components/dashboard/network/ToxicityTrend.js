@@ -3,6 +3,16 @@ import {Chart} from "../../chart";
 
 function ToxicityTrend({data})
 {   
+    const getXRange = () => {
+        const xVals = [];
+        const maxVal = parseInt(data[data.length-2]["time_since_first_tweet"]);
+        for(let i = 0; i <= maxVal; ++i)
+        {
+            xVals.push(i);
+        }
+        return xVals;
+    };
+    
     const chartOptions = {
         chart: {
           height: 350,
@@ -14,11 +24,8 @@ function ToxicityTrend({data})
             colors: ["#000000"]
           }
         },
-        legend: {
-            enables: true,
-            showForSingleSeries: true,
-            horizontalAlign: "left", 
-            position: "top",
+        xaxis: {
+            categories: getXRange(),
         },
         colors: ["#3e007d"],
         title: {
