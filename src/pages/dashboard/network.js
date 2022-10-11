@@ -13,10 +13,12 @@ import { AnalyticsTopicsByPopularity } from '../../components/dashboard/analytic
 import { AnalyticsTrafficSources } from '../../components/dashboard/analytics/analytics-traffic-sources';
 import Sankey  from '../../components/dashboard/overview/sankey.js';
 import {PageViews} from "../../components/dashboard/overview/pageviews"
-import { readJSONData } from '../../utils/readData';
+import { readJSONData, readCSVData } from '../../utils/readData';
 import { Reports as ReportsIcon } from '../../icons/reports';
 import { gtm } from '../../lib/gtm';
 import PropogandaDetection from '../../components/dashboard/network/PropogandaDetection';
+import TotalTweetsTrend from '../../components/dashboard/network/TotalTweetsTrend';
+import ToxicityTrend from '../../components/dashboard/network/ToxicityTrend';
 
 const preProcess = (jsonData) => {
   jsonData = jsonData["data"][0];
@@ -44,9 +46,11 @@ const preProcess = (jsonData) => {
 const Analytics = () => {
   const [sankeyData, setSankeyData] = useState(null);
   const [viewData, setViewData] = useState(undefined);
+  const [conversationData, setConversationData] = useState(undefined);
 
   useEffect(async () => {
     setSankeyData(await readJSONData("/data/sankey_data.json"))
+    setConversationData(await readCSVData("/data/toxicity_conversation_trend.csv"))
     let data = await readJSONData("/data/pageviews.json")
     setViewData(preProcess(data));
   }, []);
@@ -112,6 +116,15 @@ const Analytics = () => {
               container
               spacing={4}
             >
+
+            <Grid item md={12} xs={12}>
+                {conversationData && <TotalTweetsTrend data={conversationData} /> }
+            </Grid>
+
+            <Grid item md={12} xs={12}>
+                {conversationData && <ToxicityTrend data={conversationData} /> }
+            </Grid>
+
             <Grid item md={12} xs={12}>
                 <PropogandaDetection />
             </Grid>
