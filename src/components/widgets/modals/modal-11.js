@@ -4,86 +4,86 @@ import WarningIcon from '@mui/icons-material/WarningOutlined';
 import { X as XIcon } from '../../../icons/x';
 
 export const Modal11 = () => (
-  <Box
-    sx={{
-      backgroundColor: 'background.default',
-      minHeight: '100%',
-      p: 3
-    }}
-  >
-    <Container maxWidth="sm">
-      <Paper
-        elevation={12}
-        sx={{ position: 'relative' }}
+<Box
+  sx={{
+    backgroundColor: 'background.default',
+    minHeight: '100%',
+    p: 3
+  }}
+>
+  <Container maxWidth="sm">
+    <Paper
+      elevation={12}
+      sx={{ position: 'relative' }}
+    >
+      <IconButton
+        sx={{
+          position: 'absolute',
+          top: 8,
+          right: 8
+        }}
       >
-        <IconButton
+        <XIcon fontSize="small" />
+      </IconButton>
+      <Box
+        sx={{
+          display: 'flex',
+          pb: 2,
+          pt: 3,
+          px: 3
+        }}
+      >
+        <Avatar
           sx={{
-            position: 'absolute',
-            top: 8,
-            right: 8
+            backgroundColor: (theme) => alpha(theme.palette.error.main, 0.08),
+            color: 'error.main',
+            mr: 2
           }}
         >
-          <XIcon fontSize="small" />
-        </IconButton>
-        <Box
-          sx={{
-            display: 'flex',
-            pb: 2,
-            pt: 3,
-            px: 3
-          }}
+          <WarningIcon fontSize="small" />
+        </Avatar>
+        <div>
+          <Typography variant="h5">
+            Deactivate account
+          </Typography>
+          <Typography
+            color="textSecondary"
+            sx={{ mt: 1 }}
+            variant="body2"
+          >
+            Are you sure you want to deactivate your account? All of
+            your data will be permanently removed.
+            This action cannot be undone.
+          </Typography>
+        </div>
+      </Box>
+      <Box
+        sx={{
+          display: 'flex',
+          justifyContent: 'flex-end',
+          px: 3,
+          py: 1.5
+        }}
+      >
+        <Button
+          sx={{ mr: 2 }}
+          variant="outlined"
         >
-          <Avatar
-            sx={{
-              backgroundColor: (theme) => alpha(theme.palette.error.main, 0.08),
-              color: 'error.main',
-              mr: 2
-            }}
-          >
-            <WarningIcon fontSize="small" />
-          </Avatar>
-          <div>
-            <Typography variant="h5">
-              Deactivate account
-            </Typography>
-            <Typography
-              color="textSecondary"
-              sx={{ mt: 1 }}
-              variant="body2"
-            >
-              Are you sure you want to deactivate your account? All of
-              your data will be permanently removed.
-              This action cannot be undone.
-            </Typography>
-          </div>
-        </Box>
-        <Box
+          Cancel
+        </Button>
+        <Button
           sx={{
-            display: 'flex',
-            justifyContent: 'flex-end',
-            px: 3,
-            py: 1.5
+            backgroundColor: 'error.main',
+            '&:hover': {
+              backgroundColor: 'error.dark'
+            }
           }}
+          variant="contained"
         >
-          <Button
-            sx={{ mr: 2 }}
-            variant="outlined"
-          >
-            Cancel
-          </Button>
-          <Button
-            sx={{
-              backgroundColor: 'error.main',
-              '&:hover': {
-                backgroundColor: 'error.dark'
-              }
-            }}
-            variant="contained"
-          >
-            Deactivate
-          </Button>
-        </Box>
-      </Paper>
-    </Container>
-  </Box>
+          Deactivate
+        </Button>
+      </Box>
+    </Paper>
+  </Container>
+</Box>
 );

@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import PropTypes from 'prop-types';
 import { Box, Button, Chip, InputAdornment, TextField, Typography } from '@mui/material';
-import { MobileDatePicker } from '@mui/x-date-pickers';
+import MobileDatePicker from '@mui/lab/MobileDatePicker';
 import { ArrowRight as ArrowRightIcon } from '../../../icons/arrow-right';
 
 export const JobDetailsStep = (props) => {

@@ -3,7 +3,7 @@ import { subDays, subHours } from 'date-fns';
 const now = new Date();
 
 class ProductsApi {
-  getProducts(request) {
+  getProducts() {
     const products = [
       {
         id: '5ece2c077e39da27658aa8a9',

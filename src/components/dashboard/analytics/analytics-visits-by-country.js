@@ -72,7 +72,7 @@ const countries = [
   }
 ];
 
-export const AnalyticsVisitsByCountry = (props) => {
+export const AnalyticsTopicsByPopularity = (props) => {
   const [sort, setSort] = useState('desc');
 
   const handleSort = () => {
@@ -86,11 +86,11 @@ export const AnalyticsVisitsByCountry = (props) => {
   };
 
   const sortedCountries = applySort(countries, sort);
-
+  let title = "Topics discussed by "+props.title+" users"
   return (
     <Card {...props}>
       <CardHeader
-        title="Keywords by country"
+        title={title}
         action={(
           <Tooltip title="Refresh rate is 24h">
             <InformationCircleOutlinedIcon sx={{ color: 'action.active' }} />
@@ -101,19 +101,10 @@ export const AnalyticsVisitsByCountry = (props) => {
         <TableHead>
           <TableRow>
             <TableCell>
-              Country
-            </TableCell>
-            <TableCell sortDirection={sort}>
-              <TableSortLabel
-                active
-                direction={sort}
-                onClick={handleSort}
-              >
-                Value
-              </TableSortLabel>
+              {props.title} User
             </TableCell>
             <TableCell>
-              SEO
+              Topics
             </TableCell>
           </TableRow>
         </TableHead>
@@ -156,9 +147,6 @@ export const AnalyticsVisitsByCountry = (props) => {
                     {country.name}
                   </Typography>
                 </Box>
-              </TableCell>
-              <TableCell>
-                {numeral(country.visits).format('0,0')}
               </TableCell>
               <TableCell>
                 {country.seo}

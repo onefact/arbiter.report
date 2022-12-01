@@ -34,7 +34,7 @@ export const HomeHero = (props) => {
           align="center"
           variant="h1"
         >
-          Material Kit Pro v5.3
+          Material Kit Pro v5.2
         </Typography>
         <Typography
           align="center"

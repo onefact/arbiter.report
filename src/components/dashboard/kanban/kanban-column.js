@@ -14,8 +14,8 @@ import {
   OutlinedInput
 } from '@mui/material';
 import { DotsHorizontal as DotsHorizontalIcon } from '../../../icons/dots-horizontal';
+import { clearColumn, deleteColumn, updateColumn } from '../../../slices/kanban';
 import { useDispatch, useSelector } from '../../../store';
-import { clearColumn, deleteColumn, updateColumn } from '../../../thunks/kanban';
 import { KanbanCard } from './kanban-card';
 import { KanbanCardAdd } from './kanban-card-add';
 
@@ -67,10 +67,7 @@ export const KanbanColumn = (props) => {
 
       const update = { name };
 
-      await dispatch(updateColumn({
-        columnId: column.id,
-        update
-      }));
+      await dispatch(updateColumn(column.id, update));
       setIsRenaming(false);
       toast.success('Column updated!');
     } catch (err) {
@@ -82,9 +79,7 @@ export const KanbanColumn = (props) => {
   const handleDelete = async () => {
     try {
       setOpenMenu(false);
-      await dispatch(deleteColumn({
-        columnId: column.id
-      }));
+      await dispatch(deleteColumn(column.id));
       toast.success('Column deleted!');
     } catch (err) {
       console.error(err);
@@ -95,9 +90,7 @@ export const KanbanColumn = (props) => {
   const handleClear = async () => {
     try {
       setOpenMenu(false);
-      await dispatch(clearColumn({
-        columnId: column.id
-      }));
+      await dispatch(clearColumn(column.id));
       toast.success('Column cleared!');
     } catch (err) {
       console.error(err);

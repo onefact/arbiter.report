@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 import toast from 'react-hot-toast';
 import { Box, Button, OutlinedInput } from '@mui/material';
 import { Plus as PlusIcon } from '../../../icons/plus';
+import { addCheckItem } from '../../../slices/kanban';
 import { useDispatch } from '../../../store';
-import { addCheckItem } from '../../../thunks/kanban';
 
 export const KanbanCheckItemAdd = (props) => {
   const { cardId, checklistId, ...other } = props;
@@ -31,11 +31,7 @@ export const KanbanCheckItemAdd = (props) => {
         return;
       }
 
-      await dispatch(addCheckItem({
-        cardId,
-        checklistId,
-        name
-      }));
+      await dispatch(addCheckItem(cardId, checklistId, name));
       setIsExpanded(false);
       setName('');
       toast.success('Check item added!');

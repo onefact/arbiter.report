@@ -1,4 +1,3 @@
-import { useMemo } from 'react';
 import PropTypes from 'prop-types';
 import toast from 'react-hot-toast';
 import { addMinutes } from 'date-fns';
@@ -16,10 +15,11 @@ import {
   TextField,
   Typography
 } from '@mui/material';
-import { DateTimePicker } from '@mui/x-date-pickers';
+import { DateTimePicker } from '@mui/lab';
 import { Trash as TrashIcon } from '../../../icons/trash';
+import { createEvent, deleteEvent, updateEvent } from '../../../slices/calendar';
 import { useDispatch } from '../../../store';
-import { createEvent, deleteEvent, updateEvent } from '../../../thunks/calendar';
+import { useMemo } from 'react';
 
 export const CalendarEventDialog = (props) => {
   const { event, onAddComplete, onClose, onDeleteComplete, onEditComplete, open, range } = props;
@@ -83,10 +83,7 @@ export const CalendarEventDialog = (props) => {
         };
 
         if (event) {
-          await dispatch(updateEvent({
-            eventId: event.id,
-            update: data
-          }));
+          await dispatch(updateEvent(event.id, data));
           toast.success('Event updated!');
         } else {
           await dispatch(createEvent(data));
@@ -134,9 +131,7 @@ export const CalendarEventDialog = (props) => {
         return;
       }
 
-      await dispatch(deleteEvent({
-        eventId: event.id
-      }));
+      await dispatch(deleteEvent(event.id));
       onDeleteComplete?.();
     } catch (err) {
       console.error(err);

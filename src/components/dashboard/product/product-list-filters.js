@@ -332,14 +332,12 @@ export const ProjectListFilters = (props) => {
                       }
                     }}
                   >
-                    <>
-                        <span>
-                          {filterItem.label}
-                        </span>
-                      :
-                      {' '}
-                      {filterItem.displayValue || filterItem.value}
-                    </>
+                      <span>
+                        {filterItem.label}
+                      </span>
+                    :
+                    {' '}
+                    {filterItem.displayValue || filterItem.value}
                   </Box>
                 )}
                 onDelete={() => handleDelete(filterItem)}

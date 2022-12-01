@@ -3,7 +3,7 @@ import { subDays, subHours } from 'date-fns';
 const now = new Date();
 
 class OrderApi {
-  getOrders(request) {
+  getOrders() {
     const orders = [
       {
         id: '5ecb8a6d9f53bfae09e16115',
@@ -360,7 +360,7 @@ class OrderApi {
     return Promise.resolve(orders);
   }
 
-  getOrder(request) {
+  getOrder() {
     const order = {
       id: '5ecb8a6879877087d4aa2690',
       coupon: null,

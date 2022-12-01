@@ -59,7 +59,7 @@ export const ChatSidebar = (props) => {
       setSearchQuery(value);
 
       if (value) {
-        const data = await chatApi.getContacts({ query: value });
+        const data = await chatApi.getContacts(value);
 
         setSearchResults(data);
       } else {

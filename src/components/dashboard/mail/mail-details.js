@@ -25,8 +25,8 @@ import { DotsHorizontal as DotsHorizontalIcon } from '../../../icons/dots-horizo
 import { Download as DownloadIcon } from '../../../icons/download';
 import { Search as SearchIcon } from '../../../icons/search';
 import { Trash as TrashIcon } from '../../../icons/trash';
+import { getEmail } from '../../../slices/mail';
 import { useDispatch, useSelector } from '../../../store';
-import { getEmail } from '../../../thunks/mail';
 import { getInitials } from '../../../utils/get-initials';
 import { MailReply } from './mail-reply';
 
@@ -46,9 +46,7 @@ export const MailDetails = (props) => {
   const email = useSelector((state) => state.mail.emails.byId[emailId]);
 
   useEffect(() => {
-      dispatch(getEmail({
-        emailId
-      }));
+      dispatch(getEmail(emailId));
     },
     // eslint-disable-next-line react-hooks/exhaustive-deps
     [emailId]);

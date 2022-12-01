@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 import toast from 'react-hot-toast';
 import { Box, Button, Link, OutlinedInput, Typography } from '@mui/material';
 import { Plus as PlusIcon } from '../../../icons/plus';
+import { createCard } from '../../../slices/kanban';
 import { useDispatch } from '../../../store';
-import { createCard } from '../../../thunks/kanban';
 
 export const KanbanCardAdd = (props) => {
   const { columnId, ...other } = props;
@@ -27,10 +27,7 @@ export const KanbanCardAdd = (props) => {
 
   const handleAddConfirm = async () => {
     try {
-      await dispatch(createCard({
-        columnId,
-        name: name || 'Untitled Card'
-      }));
+      await dispatch(createCard(columnId, name || 'Untitled Card'));
       setIsExpanded(false);
       setName('');
       toast.success('Card created!');

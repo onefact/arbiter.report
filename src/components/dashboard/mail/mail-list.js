@@ -15,8 +15,8 @@ import { DotsHorizontal as DotsHorizontalIcon } from '../../../icons/dots-horizo
 import { MenuAlt4 as MenuAlt4Icon } from '../../../icons/menu-alt-4';
 import { Refresh as RefreshIcon } from '../../../icons/refresh';
 import { Search as SearchIcon } from '../../../icons/search';
+import { getEmails } from '../../../slices/mail';
 import { useDispatch, useSelector } from '../../../store';
-import { getEmails } from '../../../thunks/mail';
 import { MailItem } from './mail-item';
 
 export const MailList = (props) => {
@@ -26,9 +26,7 @@ export const MailList = (props) => {
   const [selectedEmails, setSelectedEmails] = useState([]);
 
   useEffect(() => {
-      dispatch(getEmails({
-        label
-      }));
+      dispatch(getEmails({ label }));
     },
     // eslint-disable-next-line react-hooks/exhaustive-deps
     [label]);

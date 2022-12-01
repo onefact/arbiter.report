@@ -9,7 +9,7 @@ import {
   TextField,
   Typography
 } from '@mui/material';
-import { DateTimePicker } from '@mui/x-date-pickers';
+import { DateTimePicker } from '@mui/lab';
 
 export const InputMixed = () => (
   <Box

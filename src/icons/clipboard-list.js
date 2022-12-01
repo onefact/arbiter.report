@@ -1,11 +1,7 @@
 import { createSvgIcon } from '@mui/material/utils';
 
 export const ClipboardList = createSvgIcon(
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    viewBox="0 0 20 20"
-    fill="currentColor"
-  >
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
     <path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z" />
     <path
       fillRule="evenodd"

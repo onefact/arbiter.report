@@ -14,9 +14,7 @@ const users = [
 ];
 
 class AuthApi {
-  async login(request) {
-    const { email, password } = request;
-
+  async login({ email, password }) {
     await wait(500);
 
     return new Promise((resolve, reject) => {
@@ -32,7 +30,7 @@ class AuthApi {
         // Create the access token
         const accessToken = sign({ userId: user.id }, JWT_SECRET, { expiresIn: JWT_EXPIRES_IN });
 
-        resolve({ accessToken });
+        resolve(accessToken);
       } catch (err) {
         console.error('[Auth Api]: ', err);
         reject(new Error('Internal server error'));
@@ -40,9 +38,7 @@ class AuthApi {
     });
   }
 
-  async register(request) {
-    const { email, name, password } = request;
-
+  async register({ email, name, password }) {
     await wait(1000);
 
     return new Promise((resolve, reject) => {
@@ -68,7 +64,7 @@ class AuthApi {
 
         const accessToken = sign({ userId: user.id }, JWT_SECRET, { expiresIn: JWT_EXPIRES_IN });
 
-        resolve({ accessToken });
+        resolve(accessToken);
       } catch (err) {
         console.error('[Auth Api]: ', err);
         reject(new Error('Internal server error'));
@@ -76,9 +72,7 @@ class AuthApi {
     });
   }
 
-  me(request) {
-    const { accessToken } = request;
-
+  me(accessToken) {
     return new Promise((resolve, reject) => {
       try {
         // Decode access token

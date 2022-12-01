@@ -3,7 +3,7 @@ import { subHours, subMinutes } from 'date-fns';
 const now = new Date();
 
 class SocialApi {
-  getProfile(request) {
+  getProfile() {
     const profile = {
       id: '5e86809283e28b96d2d38537',
       avatar: '/static/mock-images/avatars/avatar-anika_visser.png',
@@ -25,7 +25,7 @@ class SocialApi {
     return Promise.resolve(profile);
   }
 
-  getConnections(request) {
+  getConnections() {
     const connections = [
       {
         id: '5e887ac47eed253091be10cb',
@@ -60,7 +60,7 @@ class SocialApi {
     return Promise.resolve(connections);
   }
 
-  getPosts(request) {
+  getPosts() {
     const posts = [
       {
         id: '5e887faca2b7a1ddce01221a',
@@ -136,7 +136,7 @@ class SocialApi {
     return Promise.resolve(posts);
   }
 
-  getFeed(request) {
+  getFeed() {
     const posts = [
       {
         id: '5e887fa38598b6fe61667757',

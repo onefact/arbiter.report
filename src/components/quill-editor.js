@@ -1,13 +1,10 @@
-import { useRef } from 'react';
 import 'react-quill/dist/quill.snow.css';
 import dynamic from 'next/dynamic';
-import PropTypes from 'prop-types';
 import { styled } from '@mui/material/styles';
+import PropTypes from 'prop-types';
+import { useRef } from 'react';
 
-const Quill = dynamic(() => import('react-quill'), {
-  ssr: false,
-  loading: () => null
-});
+const Quill = dynamic(() => import('react-quill'), { ssr: false });
 
 const QuillEditorRoot = styled('div')(({ theme }) => ({
   border: 1,

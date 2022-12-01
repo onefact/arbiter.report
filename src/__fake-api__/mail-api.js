@@ -219,13 +219,11 @@ My market leading client has another fantastic opportunity for an experienced So
 ];
 
 class MailApi {
-  getLabels(request) {
+  getLabels() {
     return Promise.resolve(deepCopy(labels));
   }
 
-  getEmails(request) {
-    const { label } = request;
-
+  getEmails({ label }) {
     return new Promise((resolve, reject) => {
       try {
         // Initially we make a copy of all emails.
@@ -273,9 +271,7 @@ class MailApi {
     });
   }
 
-  getEmail(request) {
-    const { emailId } = request;
-
+  getEmail(emailId) {
     return new Promise((resolve, reject) => {
       try {
         // Find the mail

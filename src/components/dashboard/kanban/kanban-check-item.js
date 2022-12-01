@@ -4,8 +4,8 @@ import toast from 'react-hot-toast';
 import { Box, Button, Checkbox, IconButton, Input, OutlinedInput } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import { Trash as TrashIcon } from '../../../icons/trash';
+import { deleteCheckItem, updateCheckItem } from '../../../slices/kanban';
 import { useDispatch } from '../../../store';
-import { deleteCheckItem, updateCheckItem } from '../../../thunks/kanban';
 
 const KanbanCheckItemRoot = styled('div')(({ theme }) => ({
   alignItems: 'center',
@@ -34,12 +34,7 @@ export const KanbanCheckItem = (props) => {
     try {
       const state = event.target.checked ? 'complete' : 'incomplete';
 
-      await dispatch(updateCheckItem({
-        cardId,
-        checklistId,
-        checkItemId: checkItem.id,
-        update: { state }
-      }));
+      await dispatch(updateCheckItem(cardId, checklistId, checkItem.id, { state }));
       toast.success('Check item updated!');
     } catch (err) {
       console.error(err);
@@ -53,12 +48,7 @@ export const KanbanCheckItem = (props) => {
 
   const handleSave = async () => {
     try {
-      await dispatch(updateCheckItem({
-        cardId,
-        checklistId,
-        checkItemId: checkItem.id,
-        update: { name }
-      }));
+      await dispatch(updateCheckItem(cardId, checklistId, checkItem.id, { name }));
       toast.success('Check item updated!');
       onEditComplete?.();
     } catch (err) {
@@ -74,11 +64,7 @@ export const KanbanCheckItem = (props) => {
 
   const handleDelete = async () => {
     try {
-      await dispatch(deleteCheckItem({
-        cardId,
-        checklistId,
-        checkItemId: checkItem.id
-      }));
+      await dispatch(deleteCheckItem(cardId, checklistId, checkItem.id));
       toast.success('Check item deleted!');
     } catch (err) {
       console.error(err);

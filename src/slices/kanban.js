@@ -1,4 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
+import { kanbanApi } from '../__fake-api__/kanban-api';
 import { objFromArray } from '../utils/obj-from-array';
 
 const initialState = {
@@ -17,7 +18,7 @@ const initialState = {
   }
 };
 
-export const slice = createSlice({
+const slice = createSlice({
   name: 'kanban',
   initialState,
   reducers: {
@@ -181,3 +182,124 @@ export const slice = createSlice({
 });
 
 export const { reducer } = slice;
+
+export const getBoard = () => async (dispatch) => {
+  const data = await kanbanApi.getBoard();
+
+  dispatch(slice.actions.getBoard(data));
+};
+
+export const createColumn = (name) => async (dispatch) => {
+  const data = await kanbanApi.createColumn({ name });
+
+  dispatch(slice.actions.createColumn(data));
+};
+
+export const updateColumn = (columnId, update) => async (dispatch) => {
+  const data = await kanbanApi.updateColumn({ columnId, update });
+
+  dispatch(slice.actions.updateColumn(data));
+};
+
+export const clearColumn = (columnId) => async (dispatch) => {
+  await kanbanApi.clearColumn(columnId);
+
+  dispatch(slice.actions.clearColumn(columnId));
+};
+
+export const deleteColumn = (columnId) => async (dispatch) => {
+  await kanbanApi.deleteColumn(columnId);
+
+  dispatch(slice.actions.deleteColumn(columnId));
+};
+
+export const createCard = (columnId, name) => async (dispatch) => {
+  const data = await kanbanApi.createCard({ columnId, name });
+
+  dispatch(slice.actions.createCard(data));
+};
+
+export const updateCard = (cardId, update) => async (dispatch) => {
+  const data = await kanbanApi.updateCard({ cardId, update });
+
+  dispatch(slice.actions.updateCard(data));
+};
+
+export const moveCard = (cardId, position, columnId) => async (dispatch) => {
+  await kanbanApi.moveCard({ cardId, position, columnId });
+
+  dispatch(slice.actions.moveCard({
+    cardId,
+    position,
+    columnId
+  }));
+};
+
+export const deleteCard = (cardId) => async (dispatch) => {
+  await kanbanApi.deleteCard(cardId);
+
+  dispatch(slice.actions.deleteCard(cardId));
+};
+
+export const addComment = (cardId, message) => async (dispatch) => {
+  const data = await kanbanApi.addComment({ cardId, message });
+
+  dispatch(slice.actions.addComment(data));
+};
+
+export const addChecklist = (cardId, name) => async (dispatch) => {
+  const data = await kanbanApi.addChecklist({ cardId, name });
+
+  dispatch(slice.actions.addChecklist({
+    cardId,
+    checklist: data
+  }));
+};
+
+export const updateChecklist = (cardId, checklistId, update) => async (dispatch) => {
+  const data = await kanbanApi.updateChecklist({ cardId, checklistId, update });
+
+  dispatch(slice.actions.updateChecklist({
+    cardId,
+    checklist: data
+  }));
+};
+
+export const deleteChecklist = (cardId, checklistId) => async (dispatch) => {
+  await kanbanApi.deleteChecklist({ cardId, checklistId });
+
+  dispatch(slice.actions.deleteChecklist({
+    cardId,
+    checklistId
+  }));
+};
+
+export const addCheckItem = (cardId, checklistId, name) => async (dispatch) => {
+  const data = await kanbanApi.addCheckItem({ cardId, checklistId, name });
+
+  dispatch(slice.actions.addCheckItem({
+    cardId,
+    checklistId,
+    checkItem: data
+  }));
+};
+
+export const updateCheckItem = (cardId, checklistId, checkItemId, update) => async (dispatch) => {
+  const data = await kanbanApi.updateCheckItem({ cardId, checklistId, checkItemId, update });
+
+  dispatch(slice.actions.updateCheckItem({
+    cardId,
+    checklistId,
+    checkItem: data
+  }));
+};
+
+export const deleteCheckItem = (cardId, checklistId, checkItemId) => async (dispatch) => {
+  await kanbanApi.deleteCheckItem({ cardId, checklistId, checkItemId });
+
+  dispatch(slice.actions.deleteCheckItem({
+    cardId,
+    checklistId,
+    checkItemId
+  }));
+};

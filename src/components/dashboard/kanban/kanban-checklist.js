@@ -14,8 +14,8 @@ import {
   Typography
 } from '@mui/material';
 import { styled } from '@mui/material/styles';
+import { deleteChecklist, updateChecklist } from '../../../slices/kanban';
 import { useDispatch } from '../../../store';
-import { deleteChecklist, updateChecklist } from '../../../thunks/kanban';
 import { KanbanCheckItem } from './kanban-check-item';
 import { KanbanCheckItemAdd } from './kanban-check-item-add';
 import { Trash as TrashIcon } from '../../../icons/trash';
@@ -46,11 +46,7 @@ export const KanbanChecklist = (props) => {
       }
 
       setEditingName(false);
-      await dispatch(updateChecklist({
-        cardId: card.id,
-        checklistId: checklist.id,
-        update: { name }
-      }));
+      await dispatch(updateChecklist(card.id, checklist.id, { name }));
       toast.success('Checklist updated!');
     } catch (err) {
       console.error(err);
@@ -65,10 +61,7 @@ export const KanbanChecklist = (props) => {
 
   const handleDelete = async () => {
     try {
-      await dispatch(deleteChecklist({
-        cardId: card.id,
-        checklistId: checklist.id
-      }));
+      await dispatch(deleteChecklist(card.id, checklist.id));
       toast.success('Checklist deleted!');
     } catch (err) {
       console.error(err);

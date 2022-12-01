@@ -207,9 +207,7 @@ const findThreadByParticipantIds = (participantIds) => {
 };
 
 class ChatApi {
-  getContacts(request) {
-    const { query } = request;
-
+  getContacts(query) {
     return new Promise((resolve, reject) => {
       try {
         let foundContacts = contacts;
@@ -228,7 +226,7 @@ class ChatApi {
     });
   }
 
-  getThreads(request) {
+  getThreads() {
     // On server get current identity (user) from the request
     const user = {
       id: '5e86809283e28b96d2d38537',
@@ -259,9 +257,7 @@ class ChatApi {
     return Promise.resolve(deepCopy(expandedThreads));
   }
 
-  getThread(request) {
-    const { threadKey } = request;
-
+  getThread(threadKey) {
     return new Promise((resolve, reject) => {
       if (!threadKey) {
         reject(new Error('Thread key is required'));
@@ -323,9 +319,7 @@ class ChatApi {
     });
   }
 
-  markThreadAsSeen(request) {
-    const { threadId } = request;
-
+  markThreadAsSeen(threadId) {
     return new Promise((resolve, reject) => {
       try {
         const thread = threads.find((_thread) => _thread.id === threadId);
@@ -342,9 +336,7 @@ class ChatApi {
     });
   }
 
-  getParticipants(request) {
-    const { threadKey } = request;
-
+  getParticipants(threadKey) {
     return new Promise((resolve, reject) => {
       try {
         // On server get current identity (user) from the request
@@ -395,9 +387,7 @@ class ChatApi {
     });
   }
 
-  addMessage(request) {
-    const { threadId, recipientIds, body } = request;
-
+  addMessage({ threadId, recipientIds, body }) {
     return new Promise((resolve, reject) => {
       try {
         if (!(threadId || recipientIds)) {

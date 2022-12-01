@@ -171,7 +171,7 @@ const NotificationsButton = () => {
 
   return (
     <>
-      <Tooltip title="Notifications">
+      {/* <Tooltip title="Notifications">
         <IconButton
           ref={anchorRef}
           sx={{ ml: 1 }}
@@ -184,7 +184,7 @@ const NotificationsButton = () => {
             <BellIcon fontSize="small" />
           </Badge>
         </IconButton>
-      </Tooltip>
+      </Tooltip> */}
       <NotificationsPopover
         anchorEl={anchorRef.current}
         onClose={handleClosePopover}
@@ -280,9 +280,9 @@ export const DashboardNavbar = (props) => {
           </IconButton>
           <Box sx={{ flexGrow: 1 }} />
           <LanguageButton />
-          <ContentSearchButton />
+          {/* <ContentSearchButton />
           <ContactsButton />
-          <NotificationsButton />
+          <NotificationsButton /> */}
           <AccountButton />
         </Toolbar>
       </DashboardNavbarRoot>

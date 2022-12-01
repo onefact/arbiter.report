@@ -3,7 +3,7 @@ import { subDays, subHours, subMinutes, subSeconds } from 'date-fns';
 const now = new Date();
 
 class CustomerApi {
-  getCustomers(request) {
+  getCustomers() {
     const customers = [
       {
         id: '5e887ac47eed253091be10cb',
@@ -169,7 +169,7 @@ class CustomerApi {
     return Promise.resolve(customers);
   }
 
-  getCustomer(request) {
+  getCustomer() {
     const customer = {
       id: '5e86805e2bafd54f66cc95c3',
       address1: 'Street John Wick, no. 7',
@@ -192,7 +192,7 @@ class CustomerApi {
     return Promise.resolve(customer);
   }
 
-  getCustomerEmails(request) {
+  getCustomerEmails() {
     const emails = [
       {
         id: '5ece2ce3613486d95ffaea58',
@@ -209,7 +209,7 @@ class CustomerApi {
     return Promise.resolve(emails);
   }
 
-  getCustomerInvoices(request) {
+  getCustomerInvoices() {
     const invoices = [
       {
         id: '528651571NT',
@@ -228,7 +228,7 @@ class CustomerApi {
     return Promise.resolve(invoices);
   }
 
-  getCustomerLogs(request) {
+  getCustomerLogs() {
     const logs = [
       {
         id: '5ece2cfeb6e2ac847bba11ce',

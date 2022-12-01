@@ -15,7 +15,7 @@ import {
   useMediaQuery
 } from '@mui/material';
 import { styled } from '@mui/material/styles';
-import { DatePicker } from '@mui/x-date-pickers/DatePicker';
+import { DatePicker } from '@mui/lab';
 import { Search as SearchIcon } from '../../../icons/search';
 import { X } from '../../../icons/x';
 import { Scrollbar } from '../../scrollbar';

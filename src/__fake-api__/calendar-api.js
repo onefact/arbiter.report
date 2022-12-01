@@ -71,15 +71,15 @@ let events = [
 ];
 
 class CalendarApi {
-  getEvents(request) {
+  getEvents() {
     return Promise.resolve(deepCopy(events));
   }
 
-  createEvent(request) {
-    const { allDay, description, end, start, title } = request;
-
+  createEvent(data) {
     return new Promise((resolve, reject) => {
       try {
+        const { allDay, description, end, start, title } = data;
+
         // Make a deep copy
         const clonedEvents = deepCopy(events);
 
@@ -107,9 +107,7 @@ class CalendarApi {
     });
   }
 
-  updateEvent(request) {
-    const { eventId, update } = request;
-
+  updateEvent({ eventId, update }) {
     return new Promise((resolve, reject) => {
       try {
         // Make a deep copy
@@ -137,9 +135,7 @@ class CalendarApi {
     });
   }
 
-  deleteEvent(request) {
-    const { eventId } = request;
-
+  deleteEvent(eventId) {
     return new Promise((resolve, reject) => {
       try {
         // Make a deep copy

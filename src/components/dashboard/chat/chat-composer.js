@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { useRouter } from 'next/router';
 import { Box, Divider } from '@mui/material';
+import { addMessage } from '../../../slices/chat';
 import { useDispatch } from '../../../store';
-import { addMessage } from '../../../thunks/chat';
 import { ChatComposerToolbar } from './chat-composer-toolbar';
 import { ChatMessageAdd } from './chat-message-add';
 

@@ -2,8 +2,8 @@ import { useState } from 'react';
 import toast from 'react-hot-toast';
 import { Box, Button, Link, OutlinedInput, Typography } from '@mui/material';
 import { Plus as PlusIcon } from '../../../icons/plus';
+import { createColumn } from '../../../slices/kanban';
 import { useDispatch } from '../../../store';
-import { createColumn } from '../../../thunks/kanban';
 
 export const KanbanColumnAdd = (props) => {
   const dispatch = useDispatch();
@@ -25,9 +25,7 @@ export const KanbanColumnAdd = (props) => {
 
   const handleAddConfirm = async () => {
     try {
-      await dispatch(createColumn({
-        name: name || 'Untitled column'
-      }));
+      await dispatch(createColumn(name || 'Untitled column'));
       setIsExpanded(false);
       setName('');
       toast.success('Column created!');

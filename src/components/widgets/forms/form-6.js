@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Box, Button, Divider, FormControlLabel, Switch, TextField } from '@mui/material';
-import { DateTimePicker } from '@mui/x-date-pickers';
+import { DateTimePicker } from '@mui/lab';
 
 export const Form6 = () => {
   const [startDate, setStartDate] = useState(new Date());

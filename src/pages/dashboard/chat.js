@@ -11,8 +11,8 @@ import { ChatThread } from '../../components/dashboard/chat/chat-thread';
 import { ChatAlt2 as ChatAlt2Icon } from '../../icons/chat-alt2';
 import { MenuAlt4 as MenuAlt4Icon } from '../../icons/menu-alt-4';
 import { gtm } from '../../lib/gtm';
+import { getThreads } from '../../slices/chat';
 import { useDispatch } from '../../store';
-import { getThreads } from '../../thunks/chat';
 
 const ChatInner = styled('div',
   { shouldForwardProp: (prop) => prop !== 'open' })(

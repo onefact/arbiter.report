@@ -3,7 +3,7 @@ import { subDays, subHours, subMinutes, subSeconds } from 'date-fns';
 const now = new Date();
 
 class BlogApi {
-  getPosts(request) {
+  getPosts() {
     const posts = [
       {
         id: '24b76cac9a128cd949747080',
@@ -62,7 +62,7 @@ class BlogApi {
     return Promise.resolve(posts);
   }
 
-  getPost(request) {
+  getPost() {
     const post = {
       id: '24b76cac9a128cd949747080',
       author: {

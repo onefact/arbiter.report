@@ -12,8 +12,8 @@ import {
   Popover,
   Typography
 } from '@mui/material';
+import { getContacts } from '../../slices/chat';
 import { useDispatch, useSelector } from '../../store';
-import { getContacts } from '../../thunks/chat';
 import { StatusIndicator } from '../status-indicator';
 
 export const ContactsPopover = (props) => {

@@ -3,8 +3,8 @@ import { useRouter } from 'next/router';
 import PropTypes from 'prop-types';
 import { Box, Divider } from '@mui/material';
 import { chatApi } from '../../../__fake-api__/chat-api';
+import { addMessage, getThread, markThreadAsSeen, setActiveThread } from '../../../slices/chat';
 import { useDispatch, useSelector } from '../../../store';
-import { addMessage, getThread, markThreadAsSeen, setActiveThread } from '../../../thunks/chat';
 import { Scrollbar } from '../../scrollbar';
 import { ChatMessageAdd } from './chat-message-add';
 import { ChatMessages } from './chat-messages';
@@ -31,20 +31,14 @@ export const ChatThread = (props) => {
 
   const getDetails = async () => {
     try {
-      const _participants = await chatApi.getParticipants({ threadKey });
+      const _participants = await chatApi.getParticipants(threadKey);
 
       setParticipants(_participants);
 
-      const threadId = await dispatch(getThread({
-        threadKey
-      }));
+      const threadId = await dispatch(getThread(threadKey));
 
-      dispatch(setActiveThread({
-        threadId
-      }));
-      dispatch(markThreadAsSeen({
-        threadId
-      }));
+      dispatch(setActiveThread(threadId));
+      dispatch(markThreadAsSeen(threadId));
     } catch (err) {
       // If thread key is not a valid key (thread id or contact id)
       // the server throws an error, this means that the user tried a shady route
@@ -89,9 +83,7 @@ export const ChatThread = (props) => {
           body
         }));
 
-        await dispatch(getThread({
-          threadKey: threadId
-        }));
+        await dispatch(getThread(threadId));
         dispatch(setActiveThread(threadId));
       }
 

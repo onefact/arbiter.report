@@ -1,4 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
+import { chatApi } from '../__fake-api__/chat-api';
 import { objFromArray } from '../utils/obj-from-array';
 
 const initialState = {
@@ -13,7 +14,7 @@ const initialState = {
   }
 };
 
-export const slice = createSlice({
+const slice = createSlice({
   name: 'chat',
   initialState,
   reducers: {
@@ -63,3 +64,45 @@ export const slice = createSlice({
 });
 
 export const { reducer } = slice;
+
+export const getContacts = () => async (dispatch) => {
+  const data = await chatApi.getContacts();
+
+  dispatch(slice.actions.getContacts(data));
+};
+
+export const getThreads = () => async (dispatch) => {
+  const data = await chatApi.getThreads();
+
+  dispatch(slice.actions.getThreads(data));
+};
+
+export const getThread = (threadKey) => async (dispatch) => {
+  const data = await chatApi.getThread(threadKey);
+
+  dispatch(slice.actions.getThread(data));
+
+  return data?.id;
+};
+
+export const markThreadAsSeen = (threadId) => async (dispatch) => {
+  await chatApi.markThreadAsSeen(threadId);
+
+  dispatch(slice.actions.markThreadAsSeen(threadId));
+};
+
+export const setActiveThread = (threadId) => (dispatch) => {
+  dispatch(slice.actions.setActiveThread(threadId));
+};
+
+export const addMessage = ({ threadId, recipientIds, body }) => async (dispatch) => {
+  const data = await chatApi.addMessage({
+    threadId,
+    recipientIds,
+    body
+  });
+
+  dispatch(slice.actions.addMessage(data));
+
+  return data.threadId;
+};

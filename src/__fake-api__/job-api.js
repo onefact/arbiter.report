@@ -3,7 +3,7 @@ import { subDays, subHours, subMinutes, subSeconds } from 'date-fns';
 const now = new Date();
 
 class JobApi {
-  getCompanies(request) {
+  getCompanies() {
     const companies = [
       {
         id: 'GR-2FR43',
@@ -99,7 +99,7 @@ class JobApi {
     return Promise.resolve(companies);
   }
 
-  getCompany(request) {
+  getCompany() {
     return Promise.resolve({
       id: 'GR-2FR43',
       activities: [

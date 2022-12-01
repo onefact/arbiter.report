@@ -170,13 +170,11 @@ let board = {
 };
 
 class KanbanApi {
-  getBoard(request) {
+  getBoard() {
     return Promise.resolve(deepCopy(board));
   }
 
-  createColumn(request) {
-    const { name } = request;
-
+  createColumn({ name }) {
     return new Promise((resolve, reject) => {
       try {
         // Make a deep copy
@@ -202,9 +200,7 @@ class KanbanApi {
     });
   }
 
-  updateColumn(request) {
-    const { columnId, update } = request;
-
+  updateColumn({ columnId, update }) {
     return new Promise((resolve, reject) => {
       try {
         // Make a deep copy
@@ -212,11 +208,6 @@ class KanbanApi {
 
         // Find the column to clear
         const column = clonedBoard.columns.find((_column) => _column.id === columnId);
-
-        if (!column) {
-          reject(new Error('Column not found'));
-          return;
-        }
 
         // Update the column
         Object.assign(column, update);
@@ -232,9 +223,7 @@ class KanbanApi {
     });
   }
 
-  clearColumn(request) {
-    const { columnId } = request;
-
+  clearColumn(columnId) {
     return new Promise((resolve, reject) => {
       try {
         // Make a deep copy
@@ -265,9 +254,7 @@ class KanbanApi {
     });
   }
 
-  deleteColumn(request) {
-    const { columnId } = request;
-
+  deleteColumn(columnId) {
     return new Promise((resolve, reject) => {
       try {
         // Make a deep copy
@@ -298,9 +285,7 @@ class KanbanApi {
     });
   }
 
-  createCard(request) {
-    const { columnId, name } = request;
-
+  createCard({ columnId, name }) {
     return new Promise((resolve, reject) => {
       try {
         // Make a deep copy
@@ -347,9 +332,7 @@ class KanbanApi {
     });
   }
 
-  updateCard(request) {
-    const { cardId, update } = request;
-
+  updateCard({ cardId, update }) {
     return new Promise((resolve, reject) => {
       try {
         // Make a deep copy
@@ -377,9 +360,7 @@ class KanbanApi {
     });
   }
 
-  moveCard(request) {
-    const { cardId, position, columnId } = request;
-
+  moveCard({ cardId, position, columnId }) {
     return new Promise((resolve, reject) => {
       try {
         // Make a deep copy
@@ -434,9 +415,7 @@ class KanbanApi {
     });
   }
 
-  deleteCard(request) {
-    const { cardId } = request;
-
+  deleteCard(cardId) {
     return new Promise((resolve, reject) => {
       try {
         // Make a deep copy
@@ -472,9 +451,7 @@ class KanbanApi {
     });
   }
 
-  addComment(request) {
-    const { cardId, message } = request;
-
+  addComment({ cardId, message }) {
     return new Promise((resolve, reject) => {
       try {
         // Make a deep copy
@@ -512,9 +489,7 @@ class KanbanApi {
     });
   }
 
-  addChecklist(request) {
-    const { cardId, name } = request;
-
+  addChecklist({ cardId, name }) {
     return new Promise((resolve, reject) => {
       try {
         // Make a deep copy
@@ -549,9 +524,7 @@ class KanbanApi {
     });
   }
 
-  updateChecklist(request) {
-    const { cardId, checklistId, update } = request;
-
+  updateChecklist({ cardId, checklistId, update }) {
     return new Promise((resolve, reject) => {
       try {
         // Make a deep copy
@@ -587,9 +560,7 @@ class KanbanApi {
     });
   }
 
-  deleteChecklist(request) {
-    const { cardId, checklistId } = request;
-
+  deleteChecklist({ cardId, checklistId }) {
     return new Promise((resolve, reject) => {
       try {
         // Make a deep copy
@@ -617,9 +588,7 @@ class KanbanApi {
     });
   }
 
-  addCheckItem(request) {
-    const { cardId, checklistId, name } = request;
-
+  addCheckItem({ cardId, checklistId, name }) {
     return new Promise((resolve, reject) => {
       try {
         // Make a deep copy
@@ -663,9 +632,7 @@ class KanbanApi {
     });
   }
 
-  updateCheckItem(request) {
-    const { cardId, checklistId, checkItemId, update } = request;
-
+  updateCheckItem({ cardId, checklistId, checkItemId, update }) {
     return new Promise((resolve, reject) => {
       try {
         // Make a deep copy
@@ -709,9 +676,7 @@ class KanbanApi {
     });
   }
 
-  deleteCheckItem(request) {
-    const { cardId, checklistId, checkItemId } = request;
-
+  deleteCheckItem({ cardId, checklistId, checkItemId }) {
     return new Promise((resolve, reject) => {
       try {
         // Make a deep copy

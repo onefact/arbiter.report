@@ -3,7 +3,7 @@ import { addDays, subDays, subHours } from 'date-fns';
 const now = new Date();
 
 class InvoiceApi {
-  getInvoices(request) {
+  getInvoices() {
     const invoices = [
       {
         id: '5ecb868d0f437390ef3ac62c',
@@ -114,7 +114,7 @@ class InvoiceApi {
     return Promise.resolve(invoices);
   }
 
-  getInvoice(request) {
+  getInvoice() {
     const invoice = {
       id: '5ecb86785312dcc69b5799ad',
       currency: '$',

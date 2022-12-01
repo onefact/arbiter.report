@@ -19,8 +19,8 @@ import { DocumentText as DocumentTextIcon } from '../../../icons/document-text';
 import { Eye as EyeIcon } from '../../../icons/eye';
 import { EyeOff as EyeOffIcon } from '../../../icons/eye-off';
 import { Users as UsersIcon } from '../../../icons/users';
+import { addChecklist, deleteCard, moveCard, updateCard } from '../../../slices/kanban';
 import { useDispatch, useSelector } from '../../../store';
-import { addChecklist, deleteCard, moveCard, updateCard } from '../../../thunks/kanban';
 import { KanbanCardAction } from './kanban-card-action';
 import { KanbanChecklist } from './kanban-checklist';
 
@@ -38,10 +38,7 @@ export const KanbanCardModal = (props) => {
 
   const handleDetailsUpdate = debounce(async (update) => {
     try {
-      await dispatch(updateCard({
-        cardId: card.id,
-        update
-      }));
+      await dispatch(updateCard(card.id, update));
       toast.success('Card updated!');
     } catch (err) {
       console.error(err);
@@ -51,11 +48,7 @@ export const KanbanCardModal = (props) => {
 
   const handleColumnChange = async (event) => {
     try {
-      await dispatch(moveCard({
-        cardId: card.id,
-        position: 0,
-        columnId: event.target.value
-      }));
+      await dispatch(moveCard(card.id, 0, event.target.value));
       toast.success('Card moved!');
     } catch (err) {
       console.error(err);
@@ -65,10 +58,7 @@ export const KanbanCardModal = (props) => {
 
   const handleSubscribe = async () => {
     try {
-      await dispatch(updateCard({
-        cardId: card.id,
-        update: { isSubscribed: true }
-      }));
+      await dispatch(updateCard(card.id, { isSubscribed: true }));
       toast.success('Unsubscribed!');
     } catch (err) {
       console.error(err);
@@ -78,10 +68,7 @@ export const KanbanCardModal = (props) => {
 
   const handleUnsubscribe = async () => {
     try {
-      await dispatch(updateCard({
-        cardId: card.id,
-        update: { isSubscribed: false }
-      }));
+      await dispatch(updateCard(card.id, { isSubscribed: false }));
       toast.success('Subscribed!');
     } catch (err) {
       console.error(err);
@@ -91,9 +78,7 @@ export const KanbanCardModal = (props) => {
 
   const handleDelete = async () => {
     try {
-      await dispatch(deleteCard({
-        cardId: card.id
-      }));
+      await dispatch(deleteCard(card.id));
       toast.success('Card archived!');
     } catch (err) {
       console.error(err);
@@ -103,10 +88,7 @@ export const KanbanCardModal = (props) => {
 
   const handleAddChecklist = async () => {
     try {
-      await dispatch(addChecklist({
-        cardId: card.id,
-        name: 'Untitled Checklist'
-      }));
+      await dispatch(addChecklist(card.id, 'Untitled Checklist'));
       toast.success('Checklist added!');
     } catch (err) {
       console.error(err);
@@ -124,10 +106,7 @@ export const KanbanCardModal = (props) => {
         newValue = newValue.filter((item) => item !== event.target.value);
       }
 
-      await dispatch(updateCard({
-        cardId: card.id,
-        update: { labels: newValue }
-      }));
+      await dispatch(updateCard(card.id, { labels: newValue }));
       toast.success('Card updated!');
     } catch (err) {
       console.error(err);

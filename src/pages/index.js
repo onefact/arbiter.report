@@ -9,17 +9,23 @@ import { HomeDesigners } from '../components/home/home-designers';
 import { HomeFeatures } from '../components/home/home-features';
 import { HomeTestimonials } from '../components/home/home-testimonials';
 import { gtm } from '../lib/gtm';
+import { useRouter } from 'next/router'
 
 const Home = () => {
+  
+  const router = useRouter();
+  
   useEffect(() => {
-    gtm.push({ event: 'page_view' });
+    //gtm.push({ event: 'page_view' });
+    //router.push("/dashboard");
+    router.push("/authentication/login");
   }, []);
 
   return (
     <>
       <Head>
         <title>
-          Material Kit Pro
+          SimPPL
         </title>
       </Head>
       <main>

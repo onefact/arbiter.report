@@ -10,14 +10,14 @@ import { MailDetails } from '../../components/dashboard/mail/mail-details';
 import { MailList } from '../../components/dashboard/mail/mail-list';
 import { MailSidebar } from '../../components/dashboard/mail/mail-sidebar';
 import { gtm } from '../../lib/gtm';
-import { useDispatch, useSelector } from '../../store';
 import {
   closeComposer,
   closeSidebar,
   getLabels,
   openComposer,
   openSidebar
-} from '../../thunks/mail';
+} from '../../slices/mail';
+import { useDispatch, useSelector } from '../../store';
 
 const MailInner = styled('div',
   { shouldForwardProp: (prop) => prop !== 'open' })(

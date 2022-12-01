@@ -13,15 +13,16 @@ export const AuthGuard = (props) => {
       if (!router.isReady) {
         return;
       }
-
-      if (!auth.isAuthenticated) {
+      
+      setChecked(true);
+      /*if (!auth.isAuthenticated) {
         router.push({
           pathname: '/authentication/login',
           query: { returnUrl: router.asPath }
         }).catch(console.error);
       } else {
         setChecked(true);
-      }
+      }*/
     },
     // eslint-disable-next-line react-hooks/exhaustive-deps
     [router.isReady]);

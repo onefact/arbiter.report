@@ -18,10 +18,12 @@ import { DashboardLayout } from '../../components/dashboard/dashboard-layout';
 import { OverviewBanner } from '../../components/dashboard/overview/overview-banner';
 import { OverviewCryptoWallet } from '../../components/dashboard/overview/overview-crypto-wallet';
 import { OverviewInbox } from '../../components/dashboard/overview/overview-inbox';
-import { OverviewLatestTransactions } from '../../components/dashboard/overview/overview-latest-transactions';
+import { SubredditRankedList } from '../../components/dashboard/overview/subreddits-ranked-list';
 import { OverviewPrivateWallet } from '../../components/dashboard/overview/overview-private-wallet';
 import { OverviewTotalBalance } from '../../components/dashboard/overview/overview-total-balance';
 import { OverviewTotalTransactions } from '../../components/dashboard/overview/overview-total-transactions';
+import { AnalyticsGeneralOverview } from '../../components/dashboard/analytics/analytics-noview';
+import { readCSVData, readJSONData } from '../../utils/readData';
 import { ArrowRight as ArrowRightIcon } from '../../icons/arrow-right';
 import { Briefcase as BriefcaseIcon } from '../../icons/briefcase';
 import { Download as DownloadIcon } from '../../icons/download';
@@ -30,12 +32,51 @@ import { InformationCircleOutlined as InformationCircleOutlinedIcon } from '../.
 import { Reports as ReportsIcon } from '../../icons/reports';
 import { Users as UsersIcon } from '../../icons/users';
 import { gtm } from '../../lib/gtm';
+import {RedditEng} from "../../components/dashboard/overview/reddit_engagement"
+import EarthWrapper from "../../components/dashboard/overview/choropleth";
+import DailyEngagement from "../../components/dashboard/overview/dailyEngagement";
+
+import {
+  Chart as ChartJS,
+  CategoryScale,
+  LinearScale,
+  PointElement,
+  LineElement,
+  Title,
+  Tooltip,
+  Legend,
+  BarElement
+  } from 'chart.js';
+
+
 
 const Overview = () => {
-  const [displayBanner, setDisplayBanner] = useState(true);
+  const [displayBanner, setDisplayBanner] = useState(false);
+  const [postData, setPostData] = useState(undefined);
+  const [weeklyRedditData, setWeeklyRedditData] = useState(undefined);
+  const [weeklyTwitterData, setWeeklyTwitterData] = useState(undefined);
+  const [commentData, setCommentData] = useState(undefined);
+  const [dailyRedditComments, setDailyRedditComments] = useState(undefined);
 
-  useEffect(() => {
-    gtm.push({ event: 'page_view' });
+  ChartJS.register(
+    CategoryScale,
+    LinearScale,
+    PointElement,
+    LineElement,
+    Title,
+    Tooltip,
+    Legend,
+    BarElement
+  );
+
+  useEffect(async () => {
+    //gtm.push({ event: 'page_view' });
+    setDailyRedditComments(await readCSVData("/data/reddit_comment_history_updated.csv"))
+    setPostData(await readCSVData("/data/post_per_subreddit_count.csv"));
+    setCommentData(await readCSVData("/data/comments_per_subreddit_count.csv"));
+    setWeeklyRedditData(await readCSVData("/data/reddit_weekly_agg_data.csv"))
+    setWeeklyTwitterData(await readJSONData("/data/twitter_engagements_per_week.json"));
+
   }, []);
 
   useEffect(() => {
@@ -57,7 +98,7 @@ const Overview = () => {
     <>
       <Head>
         <title>
-          Dashboard: Overview | Material Kit Pro
+          Dashboard: SimPPL
         </title>
       </Head>
       <Box
@@ -76,7 +117,7 @@ const Overview = () => {
             >
               <Grid item>
                 <Typography variant="h4">
-                  Good Morning
+                  Welcome!
                 </Typography>
               </Grid>
               <Grid
@@ -94,7 +135,7 @@ const Overview = () => {
                 >
                   Reports
                 </Button>
-                <TextField
+                {/* <TextField
                   defaultValue="week"
                   label="Period"
                   select
@@ -110,10 +151,12 @@ const Overview = () => {
                   <MenuItem value="year">
                     Last year
                   </MenuItem>
-                </TextField>
+                </TextField> */}
               </Grid>
             </Grid>
           </Box>
+          <AnalyticsGeneralOverview />
+          <Box sx={{ mt: 4 }}>
           <Grid
             container
             spacing={4}
@@ -126,49 +169,50 @@ const Overview = () => {
                 <OverviewBanner onDismiss={handleDismissBanner} />
               </Grid>
             )}
-            <Grid
-              item
-              md={6}
-              xs={12}
-            >
-              <OverviewCryptoWallet />
+            <Grid item md={12} xs={12}>
+              {weeklyRedditData && weeklyTwitterData && <DailyEngagement data={{reddit: weeklyRedditData, twitter: weeklyTwitterData.data}} />}
             </Grid>
             <Grid
               item
               md={6}
               xs={12}
             >
-              <OverviewPrivateWallet />
+              {postData && <SubredditRankedList 
+              title={"Subreddits with the most reposts"} 
+              columns={["Subreddit", "Reposts"]} 
+              data={postData}/>}
             </Grid>
             <Grid
               item
-              md={8}
+              md={6}
               xs={12}
             >
-              <OverviewTotalTransactions />
+              {commentData && <SubredditRankedList 
+              title={"Subreddits with the most comments"} 
+              columns={["Subreddit", "Comments"]} 
+              data={commentData}/>}
             </Grid>
             <Grid
               item
-              md={4}
+              md={12}
               xs={12}
             >
-              <OverviewTotalBalance />
-            </Grid>
-            <Grid
+              <div id="choropleth">
+                <div className="tooltip"></div>
+              <EarthWrapper/>
+              </div>
+            </Grid> 
+            
+
+            {/* <Grid
               item
-              md={8}
+              md={12}
               xs={12}
             >
-              <OverviewLatestTransactions />
-            </Grid>
-            <Grid
-              item
-              md={4}
-              xs={12}
-            >
-              <OverviewInbox />
-            </Grid>
-            <Grid
+              {weeklyRedditData && <RedditEng data={weeklyRedditData}/>}
+            </Grid>  */}
+
+            {/* <Grid
               item
               md={6}
               xs={12}
@@ -361,8 +405,9 @@ const Overview = () => {
                   </Button>
                 </CardActions>
               </Card>
-            </Grid>
+            </Grid> */}
           </Grid>
+          </Box>     
         </Container>
       </Box>
     </>

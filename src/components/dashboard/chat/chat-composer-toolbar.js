@@ -45,7 +45,7 @@ export const ChatComposerToolbar = (props) => {
       setQuery(value);
 
       if (value) {
-        const data = await chatApi.getContacts({ query: value });
+        const data = await chatApi.getContacts(value);
 
         setSearchResults(data);
       } else {

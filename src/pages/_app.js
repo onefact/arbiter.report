@@ -7,8 +7,8 @@ import nProgress from 'nprogress';
 import { CacheProvider } from '@emotion/react';
 import { ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
-import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
-import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns';
+// import { LocalizationProvider } from '@mui/lab';
+// import AdapterDateFns from '@mui/lab/AdapterDateFns';
 import { RTL } from '../components/rtl';
 import { SettingsButton } from '../components/settings-button';
 import { SplashScreen } from '../components/splash-screen';
@@ -40,7 +40,7 @@ const App = (props) => {
     <CacheProvider value={emotionCache}>
       <Head>
         <title>
-          Material Kit Pro
+          SimPPL
         </title>
         <meta
           name="viewport"
@@ -48,7 +48,7 @@ const App = (props) => {
         />
       </Head>
       <ReduxProvider store={store}>
-        <LocalizationProvider dateAdapter={AdapterDateFns}>
+        {/* <LocalizationProvider dateAdapter={AdapterDateFns}> */}
           <AuthProvider>
             <SettingsProvider>
               <SettingsConsumer>
@@ -77,7 +77,7 @@ const App = (props) => {
               </SettingsConsumer>
             </SettingsProvider>
           </AuthProvider>
-        </LocalizationProvider>
+        {/* </LocalizationProvider> */}
       </ReduxProvider>
     </CacheProvider>
   );

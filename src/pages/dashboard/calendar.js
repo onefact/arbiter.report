@@ -18,8 +18,8 @@ import { DashboardLayout } from '../../components/dashboard/dashboard-layout';
 import { CalendarEventDialog } from '../../components/dashboard/calendar/calendar-event-dialog';
 import { CalendarToolbar } from '../../components/dashboard/calendar/calendar-toolbar';
 import { gtm } from '../../lib/gtm';
+import { getEvents, updateEvent } from '../../slices/calendar';
 import { useDispatch, useSelector } from '../../store';
-import { getEvents, updateEvent } from '../../thunks/calendar';
 
 const FullCalendarWrapper = styled('div')(({ theme }) => ({
   marginTop: theme.spacing(3),
@@ -187,13 +187,10 @@ const Calendar = () => {
     const { event } = arg;
 
     try {
-      await dispatch(updateEvent({
-        eventId: event.id,
-        update: {
-          allDay: event.allDay,
-          start: event.start?.getTime(),
-          end: event.end?.getTime()
-        }
+      await dispatch(updateEvent(event.id, {
+        allDay: event.allDay,
+        start: event.start?.getTime(),
+        end: event.end?.getTime()
       }));
     } catch (err) {
       console.error(err);
@@ -204,13 +201,10 @@ const Calendar = () => {
     const { event } = arg;
 
     try {
-      await dispatch(updateEvent({
-        eventId: event.id,
-        update: {
-          allDay: event.allDay,
-          start: event.start?.getTime(),
-          end: event.end?.getTime()
-        }
+      await dispatch(updateEvent(event.id, {
+        allDay: event.allDay,
+        start: event.start?.getTime(),
+        end: event.end?.getTime()
       }));
     } catch (err) {
       console.error(err);

@@ -2,8 +2,8 @@ import { useState } from 'react';
 import PropTypes from 'prop-types';
 import toast from 'react-hot-toast';
 import { Avatar, Box, TextField } from '@mui/material';
+import { addComment } from '../../../slices/kanban';
 import { useDispatch } from '../../../store';
-import { addComment } from '../../../thunks/kanban';
 
 export const KanbanCommentAdd = (props) => {
   const { cardId, ...other } = props;
@@ -22,10 +22,7 @@ export const KanbanCommentAdd = (props) => {
   const handleKeyUp = async (event) => {
     try {
       if (event.code === 'Enter' && message) {
-        await dispatch(addComment({
-          cardId,
-          message
-        }));
+        await dispatch(addComment(cardId, message));
         setMessage('');
         toast.success('Comment added!');
       }

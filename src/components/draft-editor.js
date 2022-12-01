@@ -3,10 +3,10 @@ import dynamic from 'next/dynamic';
 import PropTypes from 'prop-types';
 import { styled } from '@mui/material/styles';
 
-const Editor = dynamic(() => import('react-draft-wysiwyg').then((m) => m.Editor), {
-  ssr: false,
-  loading: () => null
-});
+const Editor = dynamic(async () => {
+  const m = await import('react-draft-wysiwyg');
+  return m.Editor;
+}, { ssr: false });
 
 const DraftEditorRoot = styled('div')(({ theme }) => ({
   display: 'flex',

@@ -8,8 +8,8 @@ import { DashboardLayout } from '../../components/dashboard/dashboard-layout';
 import { KanbanColumn } from '../../components/dashboard/kanban/kanban-column';
 import { KanbanColumnAdd } from '../../components/dashboard/kanban/kanban-column-add';
 import { gtm } from '../../lib/gtm';
+import { getBoard, moveCard } from '../../slices/kanban';
 import { useDispatch, useSelector } from '../../store';
-import { getBoard, moveCard } from '../../thunks/kanban';
 
 const Kanban = () => {
   const dispatch = useDispatch();
@@ -39,17 +39,10 @@ const Kanban = () => {
 
       if (source.droppableId === destination.droppableId) {
         // Moved to the same column on different position
-        await dispatch(moveCard({
-          cardId: draggableId,
-          position: destination.index
-        }));
+        await dispatch(moveCard(draggableId, destination.index));
       } else {
         // Moved to another column
-        await dispatch(moveCard({
-          cardId: draggableId,
-          position: destination.index,
-          columnId: destination.droppableId
-        }));
+        await dispatch(moveCard(draggableId, destination.index, destination.droppableId));
       }
 
       toast.success('Card moved!');
