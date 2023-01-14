@@ -6,6 +6,8 @@ import { AuthGuard } from '../../components/authentication/auth-guard';
 import { DashboardLayout } from '../../components/dashboard/dashboard-layout';
 import { PricingPlan } from '../../components/pricing/pricing-plan';
 import { gtm } from '../../lib/gtm';
+import RelatedArticles from '../../components/dashboard/network/RelatedArticles';
+import massmedia from '../../../public/static/massmedia.png'
 
 const Pricing = () => {
   const theme = useTheme();
@@ -18,7 +20,7 @@ const Pricing = () => {
     <>
       <Head>
         <title>
-          Pricing | Material Kit Pro
+         SimPPL:Related Articles
         </title>
       </Head>
       <Box
@@ -47,19 +49,19 @@ const Pricing = () => {
                 md={7}
                 xs={12}
               >
-                <Typography variant="h3">
-                  Start today. Boost up your services!
+                <Typography variant="h4" color="textPrimary" >
+                  About
                 </Typography>
                 <Typography
                   color="textSecondary"
                   sx={{ my: 2 }}
                   variant="body1"
                 >
-                  Join 3,000+ developers &amp; designers using Devias to
-                  power modern web projects.
+                Arbiter.report enables the audit of information spread across social networks, via coordinated networks that could seek to amplify misleading posts. We study articles from various newsrooms and media organizations to identify the influence they wield in the digital information ecosystem.
+
                 </Typography>
-                <Switch />
-                <Badge
+                {/* <Switch /> */}
+                {/* <Badge
                   badgeContent="25% OFF"
                   sx={{
                     '& .MuiBadge-badge': {
@@ -70,10 +72,10 @@ const Pricing = () => {
                     }
                   }}
                 >
-                  <Typography variant="body1">
+                  {/* <Typography variant="body1">
                     Yearly Payment
-                  </Typography>
-                </Badge>
+                  </Typography> 
+                </Badge> */}
               </Grid>
               <Grid
                 item
@@ -100,7 +102,7 @@ const Pricing = () => {
                 >
                   <img
                     alt="Pricing hero"
-                    src={`/static/pricing/pricing_${theme.palette.mode}.svg`}
+                    src={`/static/massmedia.png`}
                   />
                 </Box>
               </Grid>
@@ -108,7 +110,8 @@ const Pricing = () => {
           </Container>
         </Box>
         <Divider />
-        <Container
+        <RelatedArticles/>
+        {/* <Container
           maxWidth="lg"
           sx={{ py: 6 }}
         >
@@ -193,15 +196,8 @@ const Pricing = () => {
               />
             </Grid>
           </Grid>
-        </Container>
-        <Typography
-          align="center"
-          color="textSecondary"
-          component="p"
-          variant="caption"
-        >
-          30% of our income goes into Whale Charity
-        </Typography>
+        </Container> */}
+        
       </Box>
     </>
   );

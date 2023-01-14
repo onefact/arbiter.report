@@ -42,12 +42,17 @@ const getSections = (t) => [
         icon: <HomeIcon fontSize="small" />
       },
       {
-        title: t('Analytics'),
+        title: t('Related Articles'),
+        path: '/dashboard/related_articles',
+        icon: <NewspaperIcon fontSize="small" />,
+      },
+      {
+        title: t('Audience Analytics'),
         path: '/dashboard/analytics',
         icon: <ChartBarIcon fontSize="small" />
       },
       {
-        title: t('Network and Topics'),
+        title: t('Coordinated Networks'),
         path: '/dashboard/network',
         icon: <ChartPieIcon fontSize="small" />
       },
@@ -353,9 +358,9 @@ export const DashboardSidebar = (props) => {
               </NextLink>
             </Box>
             <Box sx={{ px: 2 }}>
-              {/* <Box
-                onClick={handleOpenOrganizationsPopover}
-                ref={organizationsRef}
+              <Box
+                // onClick={handleOpenOrganizationsPopover}
+                // ref={organizationsRef}
                 sx={{
                   alignItems: 'center',
                   backgroundColor: 'rgba(255, 255, 255, 0.04)',

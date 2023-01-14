@@ -19,6 +19,7 @@ import { gtm } from '../../lib/gtm';
 import PropogandaDetection from '../../components/dashboard/network/PropogandaDetection';
 import TotalTweetsTrend from '../../components/dashboard/network/TotalTweetsTrend';
 import ToxicityTrend from '../../components/dashboard/network/ToxicityTrend';
+
 import DegreeSpread from '../../components/dashboard/network/DegreeSpread';
 import FollowerGroup from '../../components/dashboard/network/FollowerGroup';
 import network_data from '../../../public/data/network.json'
@@ -125,6 +126,7 @@ const Analytics = () => {
             <Grid item md={12} xs={12}>
                 <DegreeSpread />
             </Grid>
+      
             <Grid item md={12} xs={12}>
                 {conversationData && <TotalTweetsTrend data={conversationData} /> }
             </Grid>
@@ -175,20 +177,20 @@ const Analytics = () => {
               > */}
                 {/* <AnalyticsTopicsByPopularity title={"Popular"}/> */}
               {/* </Grid> */}
-              <Grid
+              {/* <Grid
                 item
                 md={8}
                 xs={12}
               >
-                {/* <AnalyticsMostVisited /> */}
+                {/* <AnalyticsMostVisited /> 
               </Grid>
               <Grid
                 item
                 md={4}
                 xs={12}
               >
-                {/* <AnalyticsSocialSources /> */}
-              </Grid>
+                {/* <AnalyticsSocialSources /> 
+              </Grid> */}
             </Grid>
           </Box>
         </Container>

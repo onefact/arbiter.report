@@ -2,6 +2,7 @@ import { CardContent, Paper, Card, Typography } from "@mui/material";
 import { useEffect, useState } from "react";
 import {readJSONData } from '../../../utils/readData';
 
+
 const reportApiUrl = "http://104.197.43.57:8083/report?url=https://www.rt.com/russia/552849-russia-says-west-not-welcome/";
 
 function PropogandaDetection()
