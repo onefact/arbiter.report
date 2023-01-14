@@ -76,7 +76,7 @@ const Overview = () => {
     setPostData(await readCSVData("/data/post_per_subreddit_count.csv"));
     setCommentData(await readCSVData("/data/comments_per_subreddit_count.csv"));
     setWeeklyRedditData(await readCSVData("/data/reddit_weekly_agg_data.csv"))
-    setWeeklyTwitterData(await readJSONData("/data/twitter_engagements_per_week.json"));
+    // setWeeklyTwitterData(await readJSONData("/data/twitter_engagements_per_week.json"));
 
   }, []);
 
