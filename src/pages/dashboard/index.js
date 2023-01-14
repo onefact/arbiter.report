@@ -72,7 +72,7 @@ const Overview = () => {
 
   useEffect(async () => {
     //gtm.push({ event: 'page_view' });
-    setDailyRedditComments(await readCSVData("/data/reddit_comment_history_updated.csv"))
+    //setDailyRedditComments(await readCSVData("/data/reddit_comment_history_updated.csv"))
     setPostData(await readCSVData("/data/post_per_subreddit_count.csv"));
     setCommentData(await readCSVData("/data/comments_per_subreddit_count.csv"));
     setWeeklyRedditData(await readCSVData("/data/reddit_weekly_agg_data.csv"))
