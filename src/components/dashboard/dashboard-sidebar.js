@@ -30,6 +30,7 @@ import { Logo } from '../logo';
 import { Scrollbar } from '../scrollbar';
 import { DashboardSidebarSection } from './dashboard-sidebar-section';
 import { OrganizationPopover } from './organization-popover';
+import simppl_logo from '../simppl_logo.jpg';
 
 const getSections = (t) => [
   {
@@ -337,21 +338,22 @@ export const DashboardSidebar = (props) => {
           <div>
             <Box sx={{ p: 3 }}>
               <NextLink
-                href="/"
+                href="/dashboard"
                 passHref
               >
                 <a>
-                  <Logo
+                  {/* <Logo
                     sx={{
                       height: 42,
                       width: 42
                     }}
-                  />
+                  /> */}
+                <img src={simppl_logo}/>
                 </a>
               </NextLink>
             </Box>
             <Box sx={{ px: 2 }}>
-              <Box
+              {/* <Box
                 onClick={handleOpenOrganizationsPopover}
                 ref={organizationsRef}
                 sx={{
@@ -364,7 +366,7 @@ export const DashboardSidebar = (props) => {
                   py: '11px',
                   borderRadius: 1
                 }}
-              >
+              > */}
                 <div>
                   <Typography
                     color="inherit"
@@ -388,7 +390,7 @@ export const DashboardSidebar = (props) => {
                     height: 14
                   }}
                 /> */}
-              </Box>
+              {/* </Box> */}
             </Box>
           </div>
           <Divider
@@ -446,11 +448,11 @@ export const DashboardSidebar = (props) => {
           </Box> */}
         </Box>
       </Scrollbar>
-      <OrganizationPopover
+      {/* <OrganizationPopover
         anchorEl={organizationsRef.current}
         onClose={handleCloseOrganizationsPopover}
         open={openOrganizationsPopover}
-      />
+      /> */}
     </>
   );
 

@@ -1,0 +1,471 @@
+{
+    "overall_coordination_scoring": {
+        "scores": [
+            0.0,
+            0.125,
+            0.0,
+            0.0,
+            0.0
+        ],
+        "coord_communities": [
+            [
+                "AmitNirbhaya",
+                "TylerEidt",
+                "dactylion14",
+                "Saneleb26",
+                "Deathzhina",
+                "Agnakagos",
+                "skillfulrat",
+                "srbnews0",
+                "JanPete22",
+                "bobswede",
+                "moniquejolie",
+                "apixsun",
+                "thepugnews",
+                "SutheerkhanS",
+                "PaulSorrentino3",
+                "terence_hooson",
+                "sselvinjacob100",
+                "billm9",
+                "relewinde",
+                "peterpobjecky",
+                "mickhail",
+                "bangkokjojo",
+                "botcybersec",
+                "wantout1234wto",
+                "fromez123",
+                "gengh60",
+                "shehzadyounis",
+                "johnny09759600",
+                "parodox19",
+                "LalaMD2015",
+                "TheWatchmanNews",
+                "BerubeNathaniel",
+                "lastqween",
+                "TEX1200",
+                "jondknight"
+            ],
+            [
+                "PercentageRites",
+                "RPicar59"
+            ],
+            [
+                "Shahzad092",
+                "PCisfinished",
+                "Suleima80996063",
+                "imelda_mairead",
+                "HassanY89",
+                "omar67133389",
+                "SARVAJEETKUMAR2",
+                "swift_pam",
+                "AnbudAmb"
+            ],
+            [
+                "SputnikInt",
+                "SeanCanavanreal"
+            ],
+            [
+                "FreeNative_1775",
+                "LauraWeare42"
+            ],
+            [
+                "global_poli",
+                "group_ileg"
+            ]
+        ],
+        "coshare_communities": []
+    },
+    "bot_like_coordination_scoring": {
+        "scores": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+        ],
+        "coord_communities": [
+            [
+                "wantout1234wto",
+                "billm9",
+                "jondknight"
+            ],
+            [
+                "swift_pam",
+                "PCisfinished",
+                "SARVAJEETKUMAR2"
+            ]
+        ],
+        "coshare_communities": []
+    },
+    "coshare_graph_edges": [],
+    "coord_graph_edges": [
+        {
+            "source": "billm9",
+            "target": "jondknight",
+            "avg_score": 32.5,
+            "avg_delta": 25000.0,
+            "quick_coshares": 2,
+            "coshares": 4
+        },
+        {
+            "source": "billm9",
+            "target": "wantout1234wto",
+            "avg_score": 32.5,
+            "avg_delta": 25409.090909090908,
+            "quick_coshares": 1,
+            "coshares": 22
+        },
+        {
+            "source": "billm9",
+            "target": "shehzadyounis",
+            "avg_score": 32.5,
+            "avg_delta": 29666.666666666668,
+            "quick_coshares": 0,
+            "coshares": 3
+        },
+        {
+            "source": "billm9",
+            "target": "TheWatchmanNews",
+            "avg_score": 32.5,
+            "avg_delta": 40285.71428571428,
+            "quick_coshares": 0,
+            "coshares": 7
+        },
+        {
+            "source": "billm9",
+            "target": "bobswede",
+            "avg_score": 32.5,
+            "avg_delta": 9500.0,
+            "quick_coshares": 0,
+            "coshares": 2
+        },
+        {
+            "source": "billm9",
+            "target": "Deathzhina",
+            "avg_score": null,
+            "avg_delta": 5000.0,
+            "quick_coshares": 0,
+            "coshares": 2
+        },
+        {
+            "source": "billm9",
+            "target": "apixsun",
+            "avg_score": 32.5,
+            "avg_delta": 6000.0,
+            "quick_coshares": 0,
+            "coshares": 2
+        },
+        {
+            "source": "billm9",
+            "target": "botcybersec",
+            "avg_score": 32.5,
+            "avg_delta": 20000.0,
+            "quick_coshares": 0,
+            "coshares": 2
+        },
+        {
+            "source": "billm9",
+            "target": "dactylion14",
+            "avg_score": 32.5,
+            "avg_delta": 27000.0,
+            "quick_coshares": 0,
+            "coshares": 2
+        },
+        {
+            "source": "billm9",
+            "target": "terence_hooson",
+            "avg_score": 32.5,
+            "avg_delta": 25500.0,
+            "quick_coshares": 0,
+            "coshares": 2
+        },
+        {
+            "source": "billm9",
+            "target": "mickhail",
+            "avg_score": 32.5,
+            "avg_delta": 22500.0,
+            "quick_coshares": 0,
+            "coshares": 2
+        },
+        {
+            "source": "billm9",
+            "target": "BerubeNathaniel",
+            "avg_score": 32.5,
+            "avg_delta": 22000.0,
+            "quick_coshares": 0,
+            "coshares": 2
+        },
+        {
+            "source": "billm9",
+            "target": "PaulSorrentino3",
+            "avg_score": 32.5,
+            "avg_delta": 23500.0,
+            "quick_coshares": 0,
+            "coshares": 2
+        },
+        {
+            "source": "billm9",
+            "target": "johnny09759600",
+            "avg_score": 32.5,
+            "avg_delta": 25000.0,
+            "quick_coshares": 0,
+            "coshares": 2
+        },
+        {
+            "source": "billm9",
+            "target": "thepugnews",
+            "avg_score": null,
+            "avg_delta": 19000.0,
+            "quick_coshares": 0,
+            "coshares": 2
+        },
+        {
+            "source": "billm9",
+            "target": "LalaMD2015",
+            "avg_score": null,
+            "avg_delta": 21000.0,
+            "quick_coshares": 0,
+            "coshares": 2
+        },
+        {
+            "source": "billm9",
+            "target": "moniquejolie",
+            "avg_score": 32.5,
+            "avg_delta": 28000.0,
+            "quick_coshares": 0,
+            "coshares": 3
+        },
+        {
+            "source": "billm9",
+            "target": "SutheerkhanS",
+            "avg_score": 12.5,
+            "avg_delta": 29333.333333333332,
+            "quick_coshares": 0,
+            "coshares": 3
+        },
+        {
+            "source": "billm9",
+            "target": "gengh60",
+            "avg_score": 32.5,
+            "avg_delta": 36000.0,
+            "quick_coshares": 0,
+            "coshares": 2
+        },
+        {
+            "source": "billm9",
+            "target": "sselvinjacob100",
+            "avg_score": null,
+            "avg_delta": 31000.0,
+            "quick_coshares": 0,
+            "coshares": 2
+        },
+        {
+            "source": "billm9",
+            "target": "parodox19",
+            "avg_score": 32.5,
+            "avg_delta": 32000.0,
+            "quick_coshares": 0,
+            "coshares": 2
+        },
+        {
+            "source": "billm9",
+            "target": "Agnakagos",
+            "avg_score": null,
+            "avg_delta": 32000.0,
+            "quick_coshares": 0,
+            "coshares": 2
+        },
+        {
+            "source": "billm9",
+            "target": "srbnews0",
+            "avg_score": 12.5,
+            "avg_delta": 36666.666666666664,
+            "quick_coshares": 0,
+            "coshares": 3
+        },
+        {
+            "source": "billm9",
+            "target": "peterpobjecky",
+            "avg_score": null,
+            "avg_delta": 36000.0,
+            "quick_coshares": 0,
+            "coshares": 2
+        },
+        {
+            "source": "billm9",
+            "target": "AmitNirbhaya",
+            "avg_score": null,
+            "avg_delta": 37000.0,
+            "quick_coshares": 0,
+            "coshares": 2
+        },
+        {
+            "source": "billm9",
+            "target": "JanPete22",
+            "avg_score": null,
+            "avg_delta": 37000.0,
+            "quick_coshares": 0,
+            "coshares": 2
+        },
+        {
+            "source": "billm9",
+            "target": "bangkokjojo",
+            "avg_score": null,
+            "avg_delta": 40000.0,
+            "quick_coshares": 0,
+            "coshares": 2
+        },
+        {
+            "source": "billm9",
+            "target": "TEX1200",
+            "avg_score": null,
+            "avg_delta": 45000.0,
+            "quick_coshares": 0,
+            "coshares": 2
+        },
+        {
+            "source": "billm9",
+            "target": "fromez123",
+            "avg_score": null,
+            "avg_delta": 51000.0,
+            "quick_coshares": 0,
+            "coshares": 2
+        },
+        {
+            "source": "billm9",
+            "target": "Saneleb26",
+            "avg_score": null,
+            "avg_delta": 53000.0,
+            "quick_coshares": 0,
+            "coshares": 2
+        },
+        {
+            "source": "billm9",
+            "target": "TylerEidt",
+            "avg_score": null,
+            "avg_delta": 54000.0,
+            "quick_coshares": 0,
+            "coshares": 2
+        },
+        {
+            "source": "billm9",
+            "target": "relewinde",
+            "avg_score": null,
+            "avg_delta": 57000.0,
+            "quick_coshares": 0,
+            "coshares": 2
+        },
+        {
+            "source": "billm9",
+            "target": "skillfulrat",
+            "avg_score": 32.5,
+            "avg_delta": 60000.0,
+            "quick_coshares": 0,
+            "coshares": 2
+        },
+        {
+            "source": "billm9",
+            "target": "lastqween",
+            "avg_score": null,
+            "avg_delta": 60000.0,
+            "quick_coshares": 0,
+            "coshares": 2
+        },
+        {
+            "source": "PCisfinished",
+            "target": "SARVAJEETKUMAR2",
+            "avg_score": null,
+            "avg_delta": 9666.666666666666,
+            "quick_coshares": 2,
+            "coshares": 3
+        },
+        {
+            "source": "PCisfinished",
+            "target": "swift_pam",
+            "avg_score": null,
+            "avg_delta": 3000.0,
+            "quick_coshares": 0,
+            "coshares": 2
+        },
+        {
+            "source": "PCisfinished",
+            "target": "omar67133389",
+            "avg_score": 32.5,
+            "avg_delta": 6000.0,
+            "quick_coshares": 0,
+            "coshares": 2
+        },
+        {
+            "source": "PCisfinished",
+            "target": "HassanY89",
+            "avg_score": null,
+            "avg_delta": 15000.0,
+            "quick_coshares": 0,
+            "coshares": 3
+        },
+        {
+            "source": "PCisfinished",
+            "target": "Suleima80996063",
+            "avg_score": 32.5,
+            "avg_delta": 12000.0,
+            "quick_coshares": 0,
+            "coshares": 2
+        },
+        {
+            "source": "PCisfinished",
+            "target": "Shahzad092",
+            "avg_score": null,
+            "avg_delta": 32000.0,
+            "quick_coshares": 0,
+            "coshares": 2
+        },
+        {
+            "source": "PCisfinished",
+            "target": "imelda_mairead",
+            "avg_score": 32.5,
+            "avg_delta": 49800.0,
+            "quick_coshares": 0,
+            "coshares": 5
+        },
+        {
+            "source": "PCisfinished",
+            "target": "AnbudAmb",
+            "avg_score": 32.5,
+            "avg_delta": 46000.0,
+            "quick_coshares": 0,
+            "coshares": 2
+        },
+        {
+            "source": "PercentageRites",
+            "target": "RPicar59",
+            "avg_score": 32.5,
+            "avg_delta": 36000.0,
+            "quick_coshares": 0,
+            "coshares": 2
+        },
+        {
+            "source": "SeanCanavanreal",
+            "target": "SputnikInt",
+            "avg_score": 12.5,
+            "avg_delta": 46000.0,
+            "quick_coshares": 0,
+            "coshares": 2
+        },
+        {
+            "source": "LauraWeare42",
+            "target": "FreeNative_1775",
+            "avg_score": null,
+            "avg_delta": 50000.0,
+            "quick_coshares": 0,
+            "coshares": 2
+        },
+        {
+            "source": "global_poli",
+            "target": "group_ileg",
+            "avg_score": null,
+            "avg_delta": 55500.0,
+            "quick_coshares": 0,
+            "coshares": 2
+        }
+    ]
+}

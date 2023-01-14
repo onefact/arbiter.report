@@ -120,7 +120,7 @@ const Analytics = () => {
               spacing={4}
             >
             <Grid item md={12} xs={12}>
-                <FollowerGroup data={network_data} />
+                <FollowerGroup  />
             </Grid>
             <Grid item md={12} xs={12}>
                 <DegreeSpread />
