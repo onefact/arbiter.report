@@ -93,7 +93,8 @@ function DailyEngagement(props)
 
 function getEngagementData(data)
 {
-    const currYear = (new Date()).getFullYear().toString();
+    console.log(data)
+    const currYear = "2022";
     const engagement = {};
 
     let key;
@@ -126,6 +127,7 @@ function getEngagementData(data)
         }
     });
 
+    console.log(engagement)
     return engagement;
 }
 
