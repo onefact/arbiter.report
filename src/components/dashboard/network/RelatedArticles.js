@@ -53,7 +53,7 @@ function RelatedArticles() {
           </Typography>
        
         <Link href={`/dashboard/network?lk=${"https://www.rt.com/usa/542508-senator-nuclear-strike-russia/"}`}>
-        <Button size="small" sx={{p:1,height:30, textTransform: 'none'}}  variant="contained">Open Report</Button>
+        <Button size="small" sx={{p:1,height:30, textTransform: 'none'}}  variant="contained"> Report</Button>
         </Link>
       
       </CardContent>
@@ -76,7 +76,7 @@ function RelatedArticles() {
           </Typography>
        
         <Link href={`/dashboard/network?lk=${"https://www.rt.com/usa/542598-biden-nato-russia-meeting/"}`}>
-        <Button size="small" sx={{p:1,height:30, textTransform: 'none'}}  variant="contained">Open Report</Button>
+        <Button size="small" sx={{p:1,height:30, textTransform: 'none'}}  variant="contained"> Report</Button>
         </Link>
       
       </CardContent>
@@ -100,7 +100,7 @@ function RelatedArticles() {
           </Typography>
        
         <Link href={`/dashboard/network?lk=${"https://www.rt.com/usa/542602-biden-troops-ukraine-nato/"}`}>
-        <Button size="small" sx={{p:1,height:30, textTransform: 'none'}}  variant="contained">Open Report</Button>
+        <Button size="small" sx={{p:1,height:30, textTransform: 'none'}}  variant="contained"> Report</Button>
         </Link>
       
       </CardContent>
@@ -139,7 +139,7 @@ function RelatedArticles() {
           </Typography>
        
         <Link href={`/dashboard/network?lk=${"https://www.rt.com/sport/553037-fifa-russian-official-language/"}`}>
-        <Button size="small" sx={{p:1,height:30, textTransform: 'none'}}  variant="contained">Open Report</Button>
+        <Button size="small" sx={{p:1,height:30, textTransform: 'none'}}  variant="contained"> Report</Button>
         </Link>
       
       </CardContent>
@@ -163,7 +163,7 @@ function RelatedArticles() {
        
         <Link href={`/dashboard/network?lk=${"https://www.rt.com/sport/553040-world-cup-draw-ukraine-scotland-wales/"}`}>
         
-        <Button size="small" sx={{p:1,height:30, textTransform: 'none'}}  variant="contained">Open Report</Button>
+        <Button size="small" sx={{p:1,height:30, textTransform: 'none'}}  variant="contained"> Report</Button>
         </Link>
       
       </CardContent>
@@ -187,7 +187,7 @@ function RelatedArticles() {
           </Typography>
        
         <Link href={`/dashboard/network?lk=${"https://www.rt.com/sport/553054-fifa-gianni-infantino-decision-russia/"}`}>
-        <Button size="small" sx={{p:1,height:30, textTransform: 'none'}}  variant="contained">Open Report</Button>
+        <Button size="small" sx={{p:1,height:30, textTransform: 'none'}}  variant="contained"> Report</Button>
         </Link>
       
       </CardContent>
@@ -221,11 +221,11 @@ function RelatedArticles() {
      
       <CardContent >
       <Typography sx={{wordWrap: "break-word"}} variant="body1" color="text.secondary" >
-      End of Western domination? 
+      End of Western domination?
           </Typography>
        
         <Link href={`/dashboard/network?lk=${"https://www.rt.com/shows/sputnik_551740-end-western-domination-ukraine/"}`}>
-        <Button size="small" sx={{p:1,height:30, textTransform: 'none'}}  variant="contained">Open Report</Button>
+        <Button size="small" sx={{p:1,height:30, textTransform: 'none'}}  variant="contained"> Report</Button>
         </Link>
       
       </CardContent>
@@ -245,11 +245,11 @@ function RelatedArticles() {
      
       <CardContent >
       <Typography sx={{wordWrap: "break-word"}} variant="body1" color="text.secondary" >
-      NATO's infowar and the history of the Ukrainian conflict
+      NATO&apos;s infowar and the history of the Ukrainian conflict
           </Typography>
        
         <Link href={`/dashboard/network?lk=${"https://www.rt.com/shows/sputnik_552277-nato-infowar-ukrainian-conflict/"}`}>
-        <Button size="small" sx={{p:1,height:30, textTransform: 'none'}}  variant="contained">Open Report</Button>
+        <Button size="small" sx={{p:1,height:30, textTransform: 'none'}}  variant="contained"> Report</Button>
         </Link>
       
       </CardContent>
@@ -273,7 +273,7 @@ function RelatedArticles() {
           </Typography>
        
         <Link href={`/dashboard/network?lk=${"https://www.rt.com/shows/sputnik_548303-ukraine-invasion-world-chaos/"}`}>
-        <Button size="small" sx={{p:1,height:30, textTransform: 'none'}}  variant="contained">Open Report</Button>
+        <Button size="small" sx={{p:1,height:30, textTransform: 'none'}}  variant="contained"> Report</Button>
         </Link>
       
       </CardContent>
@@ -313,7 +313,7 @@ function RelatedArticles() {
           </Typography>
        
         <Link href={`/dashboard/network?lk=${"https://www.rt.com/usa/543003-msnbc-trump-supporters-coup/"}`}>
-        <Button size="small" sx={{p:1,height:30, textTransform: 'none'}}  variant="contained">Open Report</Button>
+        <Button size="small" sx={{p:1,height:30, textTransform: 'none'}}  variant="contained"> Report</Button>
         </Link>
       
       </CardContent>
@@ -333,11 +333,11 @@ function RelatedArticles() {
      
       <CardContent >
       <Typography sx={{wordWrap: "break-word"}} variant="body1" color="text.secondary" >
-      Biden's hands partly tied over Ukraine, Democrats claim
+      Biden&apos;s hands partly tied over Ukraine, Democrats claim
           </Typography>
        
         <Link href={`/dashboard/network?lk=${"https://www.rt.com/usa/543149-us-ukraine-biden-funds/"}`}>
-        <Button size="small" sx={{p:1,height:30, textTransform: 'none'}}  variant="contained">Open Report</Button>
+        <Button size="small" sx={{p:1,height:30, textTransform: 'none'}}  variant="contained"> Report</Button>
         </Link>
       
       </CardContent>
@@ -357,11 +357,11 @@ function RelatedArticles() {
      
       <CardContent >
       <Typography sx={{wordWrap: "break-word"}} variant="body1" color="text.secondary" >
-      US national security advisor says Putin hasn't yet decided to invade Ukraine
+      US national security advisor says Putin hasn&apos;t yet decided to invade Ukraine
           </Typography>
        
         <Link href={`/dashboard/network?lk=${"https://www.rt.com/usa/543569-sullivan-russia-talks-ukraine/"}`}>
-        <Button size="small" sx={{p:1,height:30, textTransform: 'none'}}  variant="contained">Open Report</Button>
+        <Button size="small" sx={{p:1,height:30, textTransform: 'none'}}  variant="contained"> Report</Button>
         </Link>
       
       </CardContent>
@@ -401,7 +401,7 @@ function RelatedArticles() {
           </Typography>
        
         <Link href={`/dashboard/network?lk=${"https://www.rt.com/russia/553074-state-department-americans-leave-immediately/"}`}>
-        <Button size="small" sx={{p:1,height:30, textTransform: 'none'}}  variant="contained">Open Report</Button>
+        <Button size="small" sx={{p:1,height:30, textTransform: 'none'}}  variant="contained"> Report</Button>
         </Link>
       
       </CardContent>
@@ -425,7 +425,7 @@ function RelatedArticles() {
           </Typography>
        
         <Link href={`/dashboard/network?lk=${"https://www.rt.com/russia/553076-eu-sanctions-russia-ministry/"}`}>
-        <Button size="small" sx={{p:1,height:30, textTransform: 'none'}}  variant="contained">Open Report</Button>
+        <Button size="small" sx={{p:1,height:30, textTransform: 'none'}}  variant="contained"> Report</Button>
         </Link>
       
       </CardContent>
@@ -449,7 +449,7 @@ function RelatedArticles() {
           </Typography>
        
         <Link href={`/dashboard/network?lk=${"https://www.rt.com/russia_553077-poland-refugees-eu-funds/"}`}>
-        <Button size="small" sx={{p:1,height:30, textTransform: 'none'}}  variant="contained">Open Report</Button>
+        <Button size="small" sx={{p:1,height:30, textTransform: 'none'}}  variant="contained">Report</Button>
         </Link>
       
       </CardContent>
@@ -488,7 +488,7 @@ function RelatedArticles() {
           </Typography>
        
         <Link href={`/dashboard/network?lk=${"https://www.rt.com/pop-culture_552515-elle-russia-gen-z/"}`}>
-        <Button size="small" sx={{p:1,height:30, textTransform: 'none'}}  variant="contained">Open Report</Button>
+        <Button size="small" sx={{p:1,height:30, textTransform: 'none'}}  variant="contained"> Report</Button>
         </Link>
       
       </CardContent>
@@ -512,7 +512,7 @@ function RelatedArticles() {
           </Typography>
        
         <Link href={`/dashboard/network?lk=${"https://www.rt.com/pop-culture_552702-russian-oak-tree-banned/"}`}>
-        <Button size="small" sx={{p:1,height:30, textTransform: 'none'}}  variant="contained">Open Report</Button>
+        <Button size="small" sx={{p:1,height:30, textTransform: 'none'}}  variant="contained"> Report</Button>
         </Link>
       
       </CardContent>
@@ -536,7 +536,7 @@ function RelatedArticles() {
           </Typography>
        
         <Link href={`/dashboard/network?lk=${"https://www.rt.com/pop-culture_552808-sean-penn-demands-zelensky-invite-to-oscars/"}`}>
-        <Button size="small" sx={{p:1,height:30, textTransform: 'none'}}  variant="contained">Open Report</Button>
+        <Button size="small" sx={{p:1,height:30, textTransform: 'none'}}  variant="contained"> Report</Button>
         </Link>
       
       </CardContent>
@@ -577,7 +577,7 @@ function RelatedArticles() {
           </Typography>
        
         <Link href={`/dashboard/network?lk=${"https://www.rt.com/op-ed_548483-maastricht-treaty-eu-success/"}`}>
-        <Button size="small" sx={{p:1,height:30, textTransform: 'none'}}  variant="contained">Open Report</Button>
+        <Button size="small" sx={{p:1,height:30, textTransform: 'none'}}  variant="contained"> Report</Button>
         </Link>
       
       </CardContent>
@@ -601,7 +601,7 @@ function RelatedArticles() {
           </Typography>
        
         <Link href={`/dashboard/network?lk=${"https://www.rt.com/op-ed_548584-afghan-children-starving-nato/"}`}>
-        <Button size="small" sx={{p:1,height:30, textTransform: 'none'}}  variant="contained">Open Report</Button>
+        <Button size="small" sx={{p:1,height:30, textTransform: 'none'}}  variant="contained"> Report</Button>
         </Link>
       
       </CardContent>
@@ -625,7 +625,7 @@ function RelatedArticles() {
           </Typography>
        
         <Link href={`/dashboard/network?lk=${"https://www.rt.com/op-ed_548591-us-policy-advisers-russia/"}`}>
-        <Button size="small" sx={{p:1,height:30, textTransform: 'none'}}  variant="contained">Open Report</Button>
+        <Button size="small" sx={{p:1,height:30, textTransform: 'none'}}  variant="contained"> Report</Button>
         </Link>
       
       </CardContent>
@@ -641,10 +641,10 @@ function RelatedArticles() {
     <Card sx={{elevation:0,}}>
     <CardContent sx={{ flex: '1 0 auto',}}>
        <Typography component="div" variant="h5">
-       Germany and France react to Russia's gas-for-ruble demand
+       Germany and France react to Russia&apos;s gas-for-ruble demand
          </Typography>
          <Typography variant="subtitle3" color="text.secondary">
-         French and German officials have said they won't buy Russian gas with rubles, calling Vladimir Putin's demand that they do so blackmail
+         French and German officials have said they won&apos;t buy Russian gas with rubles, calling Vladimir Putin&apos;s demand that they do so blackmail
          </Typography>
        </CardContent>
 
@@ -665,7 +665,7 @@ function RelatedArticles() {
           </Typography>
        
         <Link href={`/dashboard/network?lk=${"https://www.rt.com/russia/553074-state-department-americans-leave-immediately/"}`}>
-        <Button size="small" sx={{p:1,height:30, textTransform: 'none'}}  variant="contained">Open Report</Button>
+        <Button size="small" sx={{p:1,height:30, textTransform: 'none'}}  variant="contained"> Report</Button>
         </Link>
       
       </CardContent>
@@ -689,7 +689,7 @@ function RelatedArticles() {
           </Typography>
        
         <Link href={`/dashboard/network?lk=${"https://www.rt.com/news/553075-un-reaction-rt-sanctions/"}`}>
-        <Button size="small" sx={{p:1,height:30, textTransform: 'none'}}  variant="contained">Open Report</Button>
+        <Button size="small" sx={{p:1,height:30, textTransform: 'none'}}  variant="contained"> Report</Button>
         </Link>
       
       </CardContent>
@@ -713,7 +713,7 @@ function RelatedArticles() {
           </Typography>
        
         <Link href={`/dashboard/network?lk=${"https://www.rt.com/news/553080-pakistan-khan-us-no-confidence/"}`}>
-        <Button size="small" sx={{p:1,height:30, textTransform: 'none'}}  variant="contained">Open Report</Button>
+        <Button size="small" sx={{p:1,height:30, textTransform: 'none'}}  variant="contained"> Report</Button>
         </Link>
       
       </CardContent>
@@ -752,7 +752,7 @@ function RelatedArticles() {
           </Typography>
        
         <Link href={`/dashboard/network?lk=${"https://www.rt.com/business/553038-russia-lifts-ban-parallel-imports/"}`}>
-        <Button size="small" sx={{p:1,height:30, textTransform: 'none'}}  variant="contained">Open Report</Button>
+        <Button size="small" sx={{p:1,height:30, textTransform: 'none'}}  variant="contained"> Report</Button>
         </Link>
       
       </CardContent>
@@ -776,7 +776,7 @@ function RelatedArticles() {
           </Typography>
        
         <Link href={`/dashboard/network?lk=${"https://www.rt.com/business/553045-ruble-reserves-gas-expert/"}`}>
-        <Button size="small" sx={{p:1,height:30, textTransform: 'none'}}  variant="contained">Open Report</Button>
+        <Button size="small" sx={{p:1,height:30, textTransform: 'none'}}  variant="contained"> Report</Button>
         </Link>
       
       </CardContent>
@@ -800,7 +800,7 @@ function RelatedArticles() {
           </Typography>
        
         <Link href={`/dashboard/network?lk=${"https://www.rt.com/business/553079-biden-oil-release-green-prices/"}`}>
-        <Button size="small" sx={{p:1,height:30, textTransform: 'none'}}  variant="contained">Open Report</Button>
+        <Button size="small" sx={{p:1,height:30, textTransform: 'none'}}  variant="contained"> Report</Button>
         </Link>
       
       </CardContent>
