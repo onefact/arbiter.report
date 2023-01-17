@@ -1,12 +1,15 @@
 import { CardContent, Paper, Card, Typography } from "@mui/material";
 import { useEffect, useState } from "react";
 import {readJSONData } from '../../../utils/readData';
+import { useRouter } from 'next/router';
 
-
-const reportApiUrl = "http://104.197.43.57:8083/report?url=https://www.rt.com/russia/552849-russia-says-west-not-welcome/";
+const reportApiUrl = "http://104.197.43.57:8083/report";
 
 function PropogandaDetection()
 {
+    const router = useRouter();
+    const articleUrl = (router.query.lk && router.query.lk.length > 0) ? router.query.lk : "https://www.rt.com/russia/552849-russia-says-west-not-welcome/";
+    
     const [data, setData] = useState(null);
     const [articles, setArticles] = useState([{title: "Economic Crisis in Ukraine", 
     text: "Inflation in Ukraine will accelerate and the country will find itself on the brink of a default without financing from the International Monetary Fund, according to the chairman of the National Bank of Ukraine Chairman, Volodymyr Stelmakh. But the politicThe government and the National Bank of Ukraine reached an agreement with the IMF over a $US 16.5 billion loan last week, issued on the condition that the government will pass structural reforms to address the current economic crisis._ However, the IMF Board can grant the loan only after the Ukrainian parliament passes amendments to the Ukrainian laws on restricting budget spending and supporting the banking system._ Due to the continuing dispute between President Yushchenko and Prime Minsiter Yulia Timoshenko the parliament so far failed to pass the necessary bills.", 
@@ -34,7 +37,7 @@ function PropogandaDetection()
 
     
     useEffect(() => {
-        loadData(setData);
+        loadData(setData, articleUrl);
     }, []);
 
     useEffect(() => {
@@ -107,11 +110,11 @@ function TopicsList({data})
         </div>)
 }
 
-async function loadData(setData)
+async function loadData(setData, articleUrl)
 {
     try
     {
-        const resp = await fetch(reportApiUrl,{
+        const resp = await fetch(`${reportApiUrl}?url=${articleUrl}`,{
             method: "GET",
             headers: {
                 "Authorization" : `Basic ${Buffer.from("parrot:parrot123").toString('base64')}`

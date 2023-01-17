@@ -52,7 +52,7 @@ function RelatedArticles() {
       US senator won rule out nuclear strike against Russia
           </Typography>
        
-        <Link href="https://www.rt.com/usa/542508-senator-nuclear-strike-russia/">
+        <Link href={`/dashboard/network?lk=${"https://www.rt.com/usa/542508-senator-nuclear-strike-russia/"}`}>
         <Button size="small" sx={{p:1,height:30, textTransform: 'none'}}  variant="contained">Open Report</Button>
         </Link>
       
@@ -75,7 +75,7 @@ function RelatedArticles() {
       Biden hints at NATO-Russia meeting about Ukraine
           </Typography>
        
-        <Link href="https://www.rt.com/usa/542598-biden-nato-russia-meeting/">
+        <Link href={`/dashboard/network?lk=${"https://www.rt.com/usa/542598-biden-nato-russia-meeting/"}`}>
         <Button size="small" sx={{p:1,height:30, textTransform: 'none'}}  variant="contained">Open Report</Button>
         </Link>
       
@@ -99,7 +99,7 @@ function RelatedArticles() {
       Biden answers if US troops will head to Ukraine
           </Typography>
        
-        <Link href="https://www.rt.com/usa/542602-biden-troops-ukraine-nato/">
+        <Link href={`/dashboard/network?lk=${"https://www.rt.com/usa/542602-biden-troops-ukraine-nato/"}`}>
         <Button size="small" sx={{p:1,height:30, textTransform: 'none'}}  variant="contained">Open Report</Button>
         </Link>
       
@@ -138,7 +138,7 @@ function RelatedArticles() {
       FIFA holds vote on Russian as an official language
           </Typography>
        
-        <Link href="https://www.rt.com/sport/553037-fifa-russian-official-language/">
+        <Link href={`/dashboard/network?lk=${"https://www.rt.com/sport/553037-fifa-russian-official-language/"}`}>
         <Button size="small" sx={{p:1,height:30, textTransform: 'none'}}  variant="contained">Open Report</Button>
         </Link>
       
@@ -161,7 +161,8 @@ function RelatedArticles() {
       Ukraine should not be gifted World Cup spot, insists boss
           </Typography>
        
-        <Link href="https://www.rt.com/sport/553040-world-cup-draw-ukraine-scotland-wales/">
+        <Link href={`/dashboard/network?lk=${"https://www.rt.com/sport/553040-world-cup-draw-ukraine-scotland-wales/"}`}>
+        
         <Button size="small" sx={{p:1,height:30, textTransform: 'none'}}  variant="contained">Open Report</Button>
         </Link>
       
@@ -185,7 +186,7 @@ function RelatedArticles() {
       FIFA boss explains decision to ban Russian teams
           </Typography>
        
-        <Link href="https://www.rt.com/sport/553054-fifa-gianni-infantino-decision-russia/">
+        <Link href={`/dashboard/network?lk=${"https://www.rt.com/sport/553054-fifa-gianni-infantino-decision-russia/"}`}>
         <Button size="small" sx={{p:1,height:30, textTransform: 'none'}}  variant="contained">Open Report</Button>
         </Link>
       
@@ -223,7 +224,7 @@ function RelatedArticles() {
       End of Western domination? 
           </Typography>
        
-        <Link href="https://www.rt.com/shows/sputnik_551740-end-western-domination-ukraine/">
+        <Link href={`/dashboard/network?lk=${"https://www.rt.com/shows/sputnik_551740-end-western-domination-ukraine/"}`}>
         <Button size="small" sx={{p:1,height:30, textTransform: 'none'}}  variant="contained">Open Report</Button>
         </Link>
       
@@ -247,7 +248,7 @@ function RelatedArticles() {
       NATO's infowar and the history of the Ukrainian conflict
           </Typography>
        
-        <Link href="https://www.rt.com/shows/sputnik_552277-nato-infowar-ukrainian-conflict/">
+        <Link href={`/dashboard/network?lk=${"https://www.rt.com/shows/sputnik_552277-nato-infowar-ukrainian-conflict/"}`}>
         <Button size="small" sx={{p:1,height:30, textTransform: 'none'}}  variant="contained">Open Report</Button>
         </Link>
       
@@ -271,7 +272,7 @@ function RelatedArticles() {
       Ukraine invasion and world in chaos (E422)
           </Typography>
        
-        <Link href="  https://www.rt.com/shows/sputnik_548303-ukraine-invasion-world-chaos/">
+        <Link href={`/dashboard/network?lk=${"https://www.rt.com/shows/sputnik_548303-ukraine-invasion-world-chaos/"}`}>
         <Button size="small" sx={{p:1,height:30, textTransform: 'none'}}  variant="contained">Open Report</Button>
         </Link>
       
@@ -311,7 +312,7 @@ function RelatedArticles() {
       30 million Americans ready to take up arms, MSNBC claims
           </Typography>
        
-        <Link href="https://www.rt.com/usa/543003-msnbc-trump-supporters-coup/">
+        <Link href={`/dashboard/network?lk=${"https://www.rt.com/usa/543003-msnbc-trump-supporters-coup/"}`}>
         <Button size="small" sx={{p:1,height:30, textTransform: 'none'}}  variant="contained">Open Report</Button>
         </Link>
       
@@ -335,7 +336,7 @@ function RelatedArticles() {
       Biden's hands partly tied over Ukraine, Democrats claim
           </Typography>
        
-        <Link href="https://www.rt.com/usa/543149-us-ukraine-biden-funds/">
+        <Link href={`/dashboard/network?lk=${"https://www.rt.com/usa/543149-us-ukraine-biden-funds/"}`}>
         <Button size="small" sx={{p:1,height:30, textTransform: 'none'}}  variant="contained">Open Report</Button>
         </Link>
       
@@ -359,7 +360,7 @@ function RelatedArticles() {
       US national security advisor says Putin hasn't yet decided to invade Ukraine
           </Typography>
        
-        <Link href="https://www.rt.com/usa/543569-sullivan-russia-talks-ukraine/">
+        <Link href={`/dashboard/network?lk=${"https://www.rt.com/usa/543569-sullivan-russia-talks-ukraine/"}`}>
         <Button size="small" sx={{p:1,height:30, textTransform: 'none'}}  variant="contained">Open Report</Button>
         </Link>
       
@@ -399,7 +400,7 @@ function RelatedArticles() {
       US tells citizens in Russia and Ukraine to leave immediately
           </Typography>
        
-        <Link href="https://www.rt.com/russia/553074-state-department-americans-leave-immediately/">
+        <Link href={`/dashboard/network?lk=${"https://www.rt.com/russia/553074-state-department-americans-leave-immediately/"}`}>
         <Button size="small" sx={{p:1,height:30, textTransform: 'none'}}  variant="contained">Open Report</Button>
         </Link>
       
@@ -423,7 +424,7 @@ function RelatedArticles() {
       Russia sanctions EU leadership
           </Typography>
        
-        <Link href="https://www.rt.com/russia/553076-eu-sanctions-russia-ministry/">
+        <Link href={`/dashboard/network?lk=${"https://www.rt.com/russia/553076-eu-sanctions-russia-ministry/"}`}>
         <Button size="small" sx={{p:1,height:30, textTransform: 'none'}}  variant="contained">Open Report</Button>
         </Link>
       
@@ -447,7 +448,7 @@ function RelatedArticles() {
       Poland asks EU for billions to manage Ukrainian refugees
           </Typography>
        
-        <Link href="https://www.rt.com/russia_553077-poland-refugees-eu-funds/">
+        <Link href={`/dashboard/network?lk=${"https://www.rt.com/russia_553077-poland-refugees-eu-funds/"}`}>
         <Button size="small" sx={{p:1,height:30, textTransform: 'none'}}  variant="contained">Open Report</Button>
         </Link>
       
@@ -486,7 +487,7 @@ function RelatedArticles() {
       Letter Z on Elle Russia front page draws hate
           </Typography>
        
-        <Link href="https://www.rt.com/pop-culture_552515-elle-russia-gen-z/">
+        <Link href={`/dashboard/network?lk=${"https://www.rt.com/pop-culture_552515-elle-russia-gen-z/"}`}>
         <Button size="small" sx={{p:1,height:30, textTransform: 'none'}}  variant="contained">Open Report</Button>
         </Link>
       
@@ -510,7 +511,7 @@ function RelatedArticles() {
       Russian tree canceled
           </Typography>
        
-        <Link href="https://www.rt.com/pop-culture_552702-russian-oak-tree-banned/">
+        <Link href={`/dashboard/network?lk=${"https://www.rt.com/pop-culture_552702-russian-oak-tree-banned/"}`}>
         <Button size="small" sx={{p:1,height:30, textTransform: 'none'}}  variant="contained">Open Report</Button>
         </Link>
       
@@ -534,7 +535,7 @@ function RelatedArticles() {
       Sean Penn gives ultimatum on Zelensky speech at Oscars
           </Typography>
        
-        <Link href="https://www.rt.com/pop-culture_552808-sean-penn-demands-zelensky-invite-to-oscars/">
+        <Link href={`/dashboard/network?lk=${"https://www.rt.com/pop-culture_552808-sean-penn-demands-zelensky-invite-to-oscars/"}`}>
         <Button size="small" sx={{p:1,height:30, textTransform: 'none'}}  variant="contained">Open Report</Button>
         </Link>
       
@@ -575,7 +576,7 @@ function RelatedArticles() {
       Maastricht Treaty 30 years on: Has EU been a success?
           </Typography>
        
-        <Link href="https://www.rt.com/op-ed_548483-maastricht-treaty-eu-success/">
+        <Link href={`/dashboard/network?lk=${"https://www.rt.com/op-ed_548483-maastricht-treaty-eu-success/"}`}>
         <Button size="small" sx={{p:1,height:30, textTransform: 'none'}}  variant="contained">Open Report</Button>
         </Link>
       
@@ -599,7 +600,7 @@ function RelatedArticles() {
       NATO cant let Afghan children starve just because it lost
           </Typography>
        
-        <Link href="https://www.rt.com/op-ed_548584-afghan-children-starving-nato/">
+        <Link href={`/dashboard/network?lk=${"https://www.rt.com/op-ed_548584-afghan-children-starving-nato/"}`}>
         <Button size="small" sx={{p:1,height:30, textTransform: 'none'}}  variant="contained">Open Report</Button>
         </Link>
       
@@ -623,7 +624,7 @@ function RelatedArticles() {
       Why Biden needs new policy advisers on Russia
           </Typography>
        
-        <Link href="https://www.rt.com/op-ed_548591-us-policy-advisers-russia/">
+        <Link href={`/dashboard/network?lk=${"https://www.rt.com/op-ed_548591-us-policy-advisers-russia/"}`}>
         <Button size="small" sx={{p:1,height:30, textTransform: 'none'}}  variant="contained">Open Report</Button>
         </Link>
       
@@ -663,7 +664,7 @@ function RelatedArticles() {
       Britain sends more lethal weapons to Ukraine
           </Typography>
        
-        <Link href="https://www.rt.com/russia/553074-state-department-americans-leave-immediately/">
+        <Link href={`/dashboard/network?lk=${"https://www.rt.com/russia/553074-state-department-americans-leave-immediately/"}`}>
         <Button size="small" sx={{p:1,height:30, textTransform: 'none'}}  variant="contained">Open Report</Button>
         </Link>
       
@@ -687,7 +688,7 @@ function RelatedArticles() {
       UN condemns British media censorship
           </Typography>
        
-        <Link href="https://www.rt.com/news/553075-un-reaction-rt-sanctions/">
+        <Link href={`/dashboard/network?lk=${"https://www.rt.com/news/553075-un-reaction-rt-sanctions/"}`}>
         <Button size="small" sx={{p:1,height:30, textTransform: 'none'}}  variant="contained">Open Report</Button>
         </Link>
       
@@ -711,7 +712,7 @@ function RelatedArticles() {
       Pakistan PM names foreign power that wants him toppled
           </Typography>
        
-        <Link href="https://www.rt.com/news/553080-pakistan-khan-us-no-confidence/">
+        <Link href={`/dashboard/network?lk=${"https://www.rt.com/news/553080-pakistan-khan-us-no-confidence/"}`}>
         <Button size="small" sx={{p:1,height:30, textTransform: 'none'}}  variant="contained">Open Report</Button>
         </Link>
       
@@ -750,7 +751,7 @@ function RelatedArticles() {
       Russia lifts ban on parallel imports
           </Typography>
        
-        <Link href="https://www.rt.com/business/553038-russia-lifts-ban-parallel-imports/">
+        <Link href={`/dashboard/network?lk=${"https://www.rt.com/business/553038-russia-lifts-ban-parallel-imports/"}`}>
         <Button size="small" sx={{p:1,height:30, textTransform: 'none'}}  variant="contained">Open Report</Button>
         </Link>
       
@@ -774,7 +775,7 @@ function RelatedArticles() {
       Countries will need to create ruble reserves to buy Russian gas
           </Typography>
        
-        <Link href="https://www.rt.com/business/553045-ruble-reserves-gas-expert/">
+        <Link href={`/dashboard/network?lk=${"https://www.rt.com/business/553045-ruble-reserves-gas-expert/"}`}>
         <Button size="small" sx={{p:1,height:30, textTransform: 'none'}}  variant="contained">Open Report</Button>
         </Link>
       
@@ -798,7 +799,7 @@ function RelatedArticles() {
       US to unleash strategic oil reserves to lower prices
           </Typography>
        
-        <Link href="https://www.rt.com/business/553079-biden-oil-release-green-prices/">
+        <Link href={`/dashboard/network?lk=${"https://www.rt.com/business/553079-biden-oil-release-green-prices/"}`}>
         <Button size="small" sx={{p:1,height:30, textTransform: 'none'}}  variant="contained">Open Report</Button>
         </Link>
       

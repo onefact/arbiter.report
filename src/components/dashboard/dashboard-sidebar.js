@@ -371,7 +371,7 @@ export const DashboardSidebar = (props) => {
                   py: '11px',
                   borderRadius: 1
                 }}
-              > */}
+              > 
                 <div>
                   <Typography
                     color="inherit"
@@ -397,6 +397,7 @@ export const DashboardSidebar = (props) => {
                 /> */}
               {/* </Box> */}
             </Box>
+          </Box>
           </div>
           <Divider
             sx={{

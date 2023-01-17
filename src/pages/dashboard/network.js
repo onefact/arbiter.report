@@ -52,6 +52,7 @@ const Analytics = () => {
   const [viewData, setViewData] = useState(undefined);
   const [conversationData, setConversationData] = useState(undefined);
 
+
   useEffect(async () => {
     setSankeyData(await readJSONData("/data/sankey_data.json"))
     setConversationData(await readCSVData("/data/toxicity_conversation_trend.csv"))
