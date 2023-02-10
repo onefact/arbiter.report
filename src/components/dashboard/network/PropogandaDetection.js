@@ -3,12 +3,12 @@ import { useEffect, useState } from "react";
 import {readJSONData } from '../../../utils/readData';
 import { useRouter } from 'next/router';
 
-const reportApiUrl = "http://104.197.43.57:8083/report";
+const reportApiUrl = "http://34.69.181.135:8081/report";
 
 function PropogandaDetection()
 {
     const router = useRouter();
-    const articleUrl = (router.query.lk && router.query.lk.length > 0) ? router.query.lk : "https://www.rt.com/russia/552849-russia-says-west-not-welcome/";
+    const articleUrl = (router.query.lk && router.query.lk.length > 0) ? router.query.lk : "https://www.rt.com/russia/551440-ukraine-us-financed-biolaboratories/";
     
     const [data, setData] = useState(null);
     const [articles, setArticles] = useState([{title: "Economic Crisis in Ukraine", 

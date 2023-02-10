@@ -18,11 +18,13 @@ import { Reports as ReportsIcon } from '../../icons/reports';
 import { gtm } from '../../lib/gtm';
 import PropogandaDetection from '../../components/dashboard/network/PropogandaDetection';
 import TotalTweetsTrend from '../../components/dashboard/network/TotalTweetsTrend';
+//import FrequencyHeatmap from '../../components/dashboard/network/FrequencyHeatmap';
 import ToxicityTrend from '../../components/dashboard/network/ToxicityTrend';
-
 import DegreeSpread from '../../components/dashboard/network/DegreeSpread';
 import FollowerGroup from '../../components/dashboard/network/FollowerGroup';
-import network_data from '../../../public/data/network.json'
+//import AccountCreationBubble from '../../components/dashboard/network/AccountCreationBubble';
+import BotActivity from '../../components/dashboard/network/BotActivity';
+import Coordination from '../../components/dashboard/network/Coordination';
 
 const preProcess = (jsonData) => {
   jsonData = jsonData["data"][0];
@@ -51,7 +53,6 @@ const Analytics = () => {
   const [sankeyData, setSankeyData] = useState(null);
   const [viewData, setViewData] = useState(undefined);
   const [conversationData, setConversationData] = useState(undefined);
-
 
   useEffect(async () => {
     setSankeyData(await readJSONData("/data/sankey_data.json"))
@@ -94,14 +95,14 @@ const Analytics = () => {
                   m: -1
                 }}
               >
-                <Button
+                {/* <Button
                   startIcon={<ReportsIcon fontSize="small" />}
                   sx={{ m: 1 }}
                   variant="outlined"
                 >
-                  Upload File
+                  Reports
                 </Button> 
-                
+                */}
                 {/* <TextField
                   defaultValue="week"
                   label="Period"
@@ -122,12 +123,20 @@ const Analytics = () => {
               spacing={4}
             >
             <Grid item md={12} xs={12}>
-                <FollowerGroup  />
+              <Coordination />
+            </Grid>
+            <Grid item md={12} xs={12}>
+              <BotActivity />
+            </Grid>
+            {/* <Grid item md={12} xs={12}>
+                <AccountCreationBubble />
+            </Grid> */}
+            <Grid item md={12} xs={12}>
+                <FollowerGroup />
             </Grid>
             <Grid item md={12} xs={12}>
                 <DegreeSpread />
             </Grid>
-      
             <Grid item md={12} xs={12}>
                 {conversationData && <TotalTweetsTrend data={conversationData} /> }
             </Grid>
@@ -139,6 +148,9 @@ const Analytics = () => {
             <Grid item md={12} xs={12}>
                 <PropogandaDetection />
             </Grid>
+            {/* <Grid item md={12} xs={12}>
+                {conversationData && <FrequencyHeatmap data={conversationData} /> }
+            </Grid> */}
 
             {/*<Grid
               item
@@ -178,20 +190,20 @@ const Analytics = () => {
               > */}
                 {/* <AnalyticsTopicsByPopularity title={"Popular"}/> */}
               {/* </Grid> */}
-              {/* <Grid
+              <Grid
                 item
                 md={8}
                 xs={12}
               >
-                {/* <AnalyticsMostVisited /> 
+                {/* <AnalyticsMostVisited /> */}
               </Grid>
               <Grid
                 item
                 md={4}
                 xs={12}
               >
-                {/* <AnalyticsSocialSources /> 
-              </Grid> */}
+                {/* <AnalyticsSocialSources /> */}
+              </Grid>
             </Grid>
           </Box>
         </Container>
