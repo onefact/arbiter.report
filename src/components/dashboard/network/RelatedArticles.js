@@ -178,7 +178,7 @@ function RelatedArticles() {
      
       <CardContent >
       <Typography sx={{wordWrap: "break-word"}} variant="body1" color="text.secondary" >
-      27 million Soviet citizens lost their lives fighting the Nazis, Westerners comparing USSR to Hitler's Germany insult their memory
+      27 million Soviet citizens lost their lives fighting the Nazis, Westerners comparing USSR to Hitler&apos;s Germany insult their memory
           </Typography>
        
         <Link href={`/dashboard/network?lk=${"https://www.rt.com/russia/523213-soviet-union-nazis-victory-day/"}`}>
