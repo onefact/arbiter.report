@@ -2,6 +2,12 @@
 title: Changelog
 ---
 
+## v5.3.0
+
+###### Sep 15, 2022
+
+- Update dependencies
+
 ## v5.2.0
 
 ###### May 23, 2022

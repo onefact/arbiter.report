@@ -26,19 +26,19 @@ export const AccountPopover = (props) => {
   // `const { user } = useAuth();`
   const user = {
     avatar: '/static/mock-images/avatars/avatar-anika_visser.png',
-    name: 'Anika Visser'
+    name: 'Simppl User'
   };
 
-  const handleLogout = async () => {
-    try {
-      onClose?.();
-      await logout();
-      router.push('/').catch(console.error);
-    } catch (err) {
-      console.error(err);
-      toast.error('Unable to logout.');
-    }
-  };
+  // const handleLogout = async () => {
+  //   try {
+  //     onClose?.();
+  //     await logout();
+  //     router.push('/').catch(console.error);
+  //   } catch (err) {
+  //     console.error(err);
+  //     toast.error('Unable to logout.');
+  //   }
+  // };
 
   return (
     <Popover
@@ -86,7 +86,7 @@ export const AccountPopover = (props) => {
         </Box>
       </Box>
       <Divider />
-      <Box sx={{ my: 1 }}>
+      {/* <Box sx={{ my: 1 }}>
         <NextLink
           href="/dashboard/social/profile"
           passHref
@@ -151,7 +151,7 @@ export const AccountPopover = (props) => {
             )}
           />
         </MenuItem>
-      </Box>
+      </Box> */}
     </Popover>
   );
 };

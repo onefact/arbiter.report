@@ -11,7 +11,7 @@ import { AnalyticsTrafficSources } from '../../components/dashboard/analytics/an
 import Sankey  from '../../components/dashboard/overview/sankey.js';
 import {PageViews} from "../../components/dashboard/overview/pageviews"
 import { readJSONData } from '../../utils/readData';
-import { Reports as ReportsIcon } from '../../icons/reports';
+// import { Reports as ReportsIcon } from '../../icons/reports';
 import { gtm } from '../../lib/gtm';
 
 const preProcess = (jsonData) => {
@@ -81,13 +81,13 @@ const Analytics = () => {
                   m: -1
                 }}
               >
-                <Button
+                {/* <Button
                   startIcon={<ReportsIcon fontSize="small" />}
                   sx={{ m: 1 }}
                   variant="outlined"
                 >
                   Reports
-                </Button>
+                </Button> */}
                 {/* <TextField
                   defaultValue="week"
                   label="Period"

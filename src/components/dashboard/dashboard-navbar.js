@@ -235,11 +235,11 @@ const AccountButton = () => {
           <UserCircleIcon fontSize="small" />
         </Avatar>
       </Box>
-      <AccountPopover
+      {/* <AccountPopover
         anchorEl={anchorRef.current}
         onClose={handleClosePopover}
         open={openPopover}
-      />
+      /> */}
     </>
   );
 };

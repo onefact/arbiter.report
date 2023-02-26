@@ -1,91 +1,134 @@
-import React, { useRef, useEffect, useState } from "react";
-import Tree from "react-d3-tree";
-import data from "../../../../public/data/topic_hierarchy_data";
-import { Button } from '@mui/material';
-import { useTheme } from '@mui/material/styles';
+import { useEffect, useState } from 'react';
+import {Chart} from "../../chart";
+import {
+    Card,
+    CardActions,
+    CardContent,
+    Typography,
+  } from '@mui/material';
 
-const svgSquare = {
-    shape: "node",
-    background: "#2196f3",
-    shapeProps: {
-      x: -10,
-      y: -10,
-      height: 30,
-      width: 50
+function DailyEngagement(props)
+{
+    const [engagementData, setEngagementData] = useState([]);
+
+    useEffect(() => {
+        setEngagementData(getEngagementData(props.data));
+    }, []);
+
+    let datasets;
+    let chartOptions;
+    if(engagementData.length !== 0) 
+    {
+        const datasetColours = ["orange", "red", "blue", "green", "violet"];
+        
+        const weeks = Object.keys(engagementData);
+        const engagementTypes = Object.keys(engagementData[weeks[0]]);
+        datasets = engagementTypes.map((engType, id) => {
+            return {
+                name: engType, 
+                data: Object.values(engagementData).map((eng) => eng[engType]), 
+                backgroundColor: datasetColours[id]
+            }
+        });
+    
+        chartOptions = {
+            chart: {
+                id: "basic-bar",
+                zoom: {
+                    type: 'x',
+                    enabled: true,
+                    autoScaleYaxis: true
+                  },
+                toolbar: {
+                    autoSelected: 'zoom',
+                    tools:{
+                        download: false,
+                    }
+                }
+            }, 
+            plotOptions: {
+                bar: {
+                  dataLabels: {
+                    position: "top" // top, center, bottom
+                  }
+                }
+              },
+              dataLabels:{
+                enabled:false
+              },
+              tooltip: {
+                enabled: true,
+                shared: false,
+                intersect: true,
+                followCursor: true,
+                theme: "dark",
+                onDatasetHover: {
+                  highlightDataSeries: false
+                },
+              },
+            xaxis: {
+                categories: weeks,
+                tickPlacement: 'on'
+            },
+            legend: {
+                horizontalAlign: "left", 
+                position: "top",
+            }
+        };
     }
-  };
- 
-  
-  const innerHeight = 800;
-  const innerWidth = 1024;
 
-  function NodeLabel(node) {
-    const { nodeData } = node;
-    const hasChildren = nodeData.children;
-    const btnStyle = {
-      background: hasChildren ? "#03A9F4" : "",
-      cursor: hasChildren ? "pointer" : "default"
-    };
-    return (
-      <button className="btn" style={btnStyle}>
-      {nodeData.name}
-    </button>
-    );
-  }
-  export const TopicHierarchyScores = () => {
-    const theme = useTheme();
-  
-    // const treeContainer = useRef();
-  const tree = useRef();
-    const [dimensions, setDimensions] = useState({
-      height:innerHeight,
-      width:innerWidth
+    return (<Card>
+            <CardContent style={{overflow: "auto"}}>
+                <Typography variant='h5' style={{marginBottom: "20px"}}>Total Engagement Over Weeks</Typography>
+                {engagementData.length !== 0 && <Chart
+                    options={chartOptions}
+                    series={datasets}
+                    type="bar"
+                    width={"100%"}//{`${datasets[0].data.length*5*50}px`}
+                    height={500}
+                />}
+            </CardContent>
+        </Card>);
+}
 
+function getEngagementData(data)
+{
+    console.log(data)
+    const currYear = "2022";
+    const engagement = {};
+
+    let key;
+    data.reddit.forEach((rd) => {
+        const splt = rd["created_YY_week"].split("_");
+        if(splt[0] === currYear)
+        {
+            key = `Week ${parseInt(splt[1])}`;
+            engagement[key] = {Posts: parseInt(rd["no_posts"])};
+        }
     });
-    // const [translate, setTranslate] = useState({ x: 25, y: 100  });
-    // useEffect(() => {
-    //   if (treeContainer.current) {
-    //     setDimensions(treeContainer.current.getBoundingClientRect());
-    //   }
-    // }, [treeContainer]);
-    // useEffect(() => {
-    //   console.log(dimensions);
-    //   setTranslate({
-    //     x: dimensions.width / 2,
-    //     y: dimensions.height / 2 / 2
-    //   });
-    // }, [dimensions]);
-  
-    // console.log("tree", tree);
-    // console.log("tree", tree);
+    
+    data.twitter.forEach((tw) => {
+        const splt = tw["year_week"].split('_');
+        if(splt[0] === currYear)
+        {
+            key = `Week ${parseInt(splt[1])}`;
+            if(!engagement[key])
+            {
+                engagement[key] = {Posts: 0, Likes: tw["like_count"], Quotes: tw["quote_count"], Replies: tw["reply_count"], 
+                Retweets: tw["retweet_count"]};
+            }
+            else
+            {
+                engagement[key].Likes = tw["like_count"];
+                engagement[key].Quotes = tw["quote_count"];
+                engagement[key].Replies = tw["reply_count"];
+                engagement[key].Retweets = tw["retweet_count"];
+            }
+        }
+    });
 
-    return (
-      <div className="TopicHierarchyScores">
-       
+    console.log(engagement)
+    return engagement;
+}
 
-        <div
-          id="treeWrapper"
-          // ref={treeContainer}
-          style={{ width: innerWidth, height: innerHeight}}
-        >
-          <Tree
-            data={data}
-            ref={tree}
-            // translate={translate}
-            // zoom={0.5}
-            nodeSvgShape={svgSquare}
-            style={{height: "50%", width: "50%"}}
-            orientation="horizontal"
-            // allowForeignObjects
-            nodeLabelComponent={{
-              render: <NodeLabel />,
-              // foreignObjectWrapper: {
-              //   y: -10,
-              //   x: -50
-              // }
-            }}
-          />
-        </div>
-      </div>
-    );
-  }
+export default DailyEngagement;

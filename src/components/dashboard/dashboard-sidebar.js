@@ -30,7 +30,7 @@ import { Logo } from '../logo';
 import { Scrollbar } from '../scrollbar';
 import { DashboardSidebarSection } from './dashboard-sidebar-section';
 import { OrganizationPopover } from './organization-popover';
-import simppl_logo from '../simppl_logo.jpg';
+import simppl_logo from '../../../public/static/simppl_logo.jpg'
 
 const getSections = (t) => [
   {
@@ -347,12 +347,6 @@ export const DashboardSidebar = (props) => {
                 passHref
               >
                 <a>
-                  {/* <Logo
-                    sx={{
-                      height: 42,
-                      width: 42
-                    }}
-                  /> */}
                 <img src={simppl_logo}/>
                 </a>
               </NextLink>

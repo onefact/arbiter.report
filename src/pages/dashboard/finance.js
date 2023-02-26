@@ -10,7 +10,7 @@ import { FinanceProfitableProducts } from '../../components/dashboard/finance/fi
 import { FinanceSalesByContinent } from '../../components/dashboard/finance/finance-sales-by-continent';
 import { FinanceSalesRevenue } from '../../components/dashboard/finance/finance-sales-revenue';
 import { Download as DownloadIcon } from '../../icons/download';
-import { Reports as ReportsIcon } from '../../icons/reports';
+// import { Reports as ReportsIcon } from '../../icons/reports';
 import { Cog as CogIcon } from '../../icons/cog';
 import { gtm } from '../../lib/gtm';
 
@@ -53,13 +53,13 @@ const Finance = () => {
                   m: -1
                 }}
               >
-                <Button
+                {/* <Button
                   startIcon={<ReportsIcon fontSize="small" />}
                   sx={{ m: 1 }}
                   variant="outlined"
                 >
                   Reports
-                </Button>
+                </Button> */}
                 <Button
                   startIcon={<CogIcon fontSize="small" />}
                   sx={{ m: 1 }}
