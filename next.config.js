@@ -22,12 +22,12 @@ module.exports = withTM({
       {
         source: '/docs',
         destination: '/docs/welcome',
-        permanent: true
+        permanent: false
       },
       {
         source: "/",
         destination: "/authentication/login",
-        permanent: true
+        permanent: false
       }
     ];
   }
